@@ -133,7 +133,6 @@ patent,unpublished,misc]
 % Kedalaman hierarki section (paling dalam subsubsection)
 \setcounter{secnumdepth}{3}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  TABLE OF CONTENTS, LISTS OF FIGURES & TABLES  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,6 +153,10 @@ patent,unpublished,misc]
 % \newlength{\mylen} % a scratch length
 % \settowidth{\mylen}{\bfseries\cftchappresnum\cftchapaftersnum} % extra space
 % \addtolength{\cftchapnumwidth}{\mylen} % add the extra space
+
+% Hilangkan indentasi di entri LoF dan LoT dan tambahkan ruang antara nomor dengan caption
+\cftsetindents{figure}{0em}{2.75em}
+\cftsetindents{table}{0em}{2.75em}
 
 % Pisah daftar lampiran dari ToC
 %%%
