@@ -104,6 +104,8 @@ patent,unpublished,misc]
 \usepackage{parskip}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage[chapter]{algorithm} % untuk algoritma
+\usepackage{algpseudocode} 		  % untuk algoritma
 
 
 %%%%%%%%%%%%%%$$%%%%%%%%%
@@ -224,6 +226,14 @@ format=hang]{caption}
 \AtBeginEnvironment{table}
   {\renewcommand{\baselinestretch}{1.0}}
 
+% Font lebih kecil untuk tabel
+\AtBeginEnvironment{tabular}
+  {\small}
+
+% Spasi single di environment algorithm
+\AtBeginEnvironment{algorithm}
+  {\renewcommand{\baselinestretch}{1.0}}
+
 % Avoid widow and orphan lines if possible
 \widowpenalty500
 \clubpenalty10000
@@ -232,6 +242,12 @@ format=hang]{caption}
 \hyphenpenalty=10000
 \tolerance=1
 \sloppy
+
+% Rename "Algorithm" into "Algoritma"
+\makeatletter
+\renewcommand*{\ALG@name}{Algoritma}
+\newcommand{\algorithmname}{\ALG@name}
+\makeatother
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
