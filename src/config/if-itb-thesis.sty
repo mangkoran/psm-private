@@ -10,20 +10,36 @@
 %
 %-------------------------------------------------------------------%
 
-% Ukuran kertas
-\special{papersize=210mm,297mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  DOCUMENT LAYOUT AND FORMATTING  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document layout
+\usepackage[top=3cm,bottom=3cm,left=4cm,right=3cm,a4paper]{geometry}
 
-% Setting margin
-\usepackage[top=3cm,bottom=3cm,left=4cm,right=3cm]{geometry}
-
-% Uncomment this line to use TNR font instead of CMU
-%\usepackage{mathptmx}
+% Uncomment these two packages if you want to use
+%  the Times New Roman font for your document
+% \usepackage{mathptmx}
+% \usepackage{newtxtext}
 
 % Judul bahasa Indonesia
 \usepackage[bahasa]{babel}
 
-% Line satu setengah spasi
+% Spacing 1.5
+\usepackage{setspace}
 \renewcommand{\baselinestretch}{1.5}
+
+% Prevent overfull (or underfull) if possible
+%\setlength{\emergencystretch}{25pt}
+
+% Avoid widow and orphan lines if possible
+\widowpenalty500
+\clubpenalty10000
+
+% Hyphenation penalty
+\include{hyphenation-id}
+\hyphenpenalty=10000
+\tolerance=1
+\sloppy
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -236,15 +252,6 @@ format=hang]{caption}
 % Spasi single di environment algorithm
 \AtBeginEnvironment{algorithm}
   {\renewcommand{\baselinestretch}{1.0}}
-
-% Avoid widow and orphan lines if possible
-\widowpenalty500
-\clubpenalty10000
-
-% Hyphenation penalty
-\hyphenpenalty=10000
-\tolerance=1
-\sloppy
 
 % Rename "Algorithm" into "Algoritma"
 \makeatletter
