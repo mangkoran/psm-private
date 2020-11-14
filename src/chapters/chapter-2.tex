@@ -9,7 +9,7 @@ Bab Studi Literatur digunakan untuk mendeskripsikan kajian literatur yang terkai
 \end{enumerate}
 
 \section{Dasar Teori}
-Perujukan literatur dapat dilakukan dengan menambahkan entri baru di berkas. Ada dua cara untuk melakukan perujukan dalam teks utama: perujukan di akhir kalimat dan perujukan langsung (di dalam sebuah kalimat). Perujukan di akhir kalimat dilakukan menggunakan perintah \texttt{\textbackslash parencite} seperti ini \parencite{knuth2001art}. Sedangkan menurut \textcite{4026885} perujukan langsung di dalam kalimat seperti ini dilakukan dengan perintah \texttt{\textbackslash textcite}.
+Perujukan literatur dapat dilakukan dengan menambahkan entri baru di berkas \texttt{references.bib}. Ada dua cara untuk melakukan perujukan dalam teks utama: perujukan di akhir kalimat dan perujukan langsung. Perujukan di akhir kalimat dilakukan menggunakan perintah \texttt{\textbackslash parencite} seperti ini \parencite{knuth:2001:art}. Sedangkan menurut \textcite{vogels:2006:web} perujukan langsung di dalam kalimat seperti ini dilakukan dengan perintah \texttt{\textbackslash textcite}.
 
 \section{Bekerja dengan Float}
 
@@ -28,7 +28,7 @@ Float bisa di-\textit{cross reference}. Contohnya Gambar~\ref{fig:contoh_gambar}
 
 \subsection{Tabel}
 
-Tabel juga merupakan float. Tabel~\ref{table:contoh_tabel} adalah contoh tabel. Perhatikan bahwa walaupun didefinisikan setelah paragraf ini, pada dokumen hasil kompilasi tabel tidak diletakkan tepat di bawah paragraf ini. Hal ini karena ukuran (tinggi) tabel tidak cukup apabila diletakkan di sisa halaman ini. \LaTeX-lah yang mengatur peletakan tabel. Oleh karena itu tidak disarankan untuk merujuk tabel (dan objek float lain) dengan frasa ``Tabel di bawah ini'', ``Tabel berikut'', dan sebagainya.
+Tabel juga merupakan float. Tabel~\ref{table:contoh_tabel} adalah contoh tabel. Perhatikan bahwa walaupun didefinisikan setelah paragraf ini, tabel tidak diletakkan tepat di bawah paragraf ini pada dokumen hasil kompilasi. Hal ini karena ukuran (tinggi) tabel tidak cukup apabila diletakkan di sisa halaman ini. \LaTeX-lah yang mengatur peletakan tabel. Oleh karena itu tidak disarankan untuk merujuk tabel (dan objek float lain) dengan frasa ``Tabel di bawah ini'', ``Tabel berikut'', dan sebagainya.
 
 \begin{table}[htbp]
     \centering

@@ -31,7 +31,11 @@ sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends \
 Penggunaan
 ----------
 
-Templat ini telah dilengkapi oleh skrip untuk melakukan kompilasi
+Terdapat panduan singkat mengenai bekerja dengan LaTeX khususnya penggunaan beberapa
+elemen pada template ini di BAB II pada dokumen template. Silakan dibaca bagi yang
+belum terlalu familiar dengan LaTeX.
+
+Template ini telah dilengkapi oleh skrip untuk melakukan kompilasi
 Makefile. Untuk melakukan kompilasi cukup eksekusi perintah berikut
 
 ```
