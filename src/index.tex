@@ -10,7 +10,7 @@
 %
 %--------------------------------------------------------------------%
 
-\documentclass[12pt, a4paper, onecolumn, oneside, final]{report}
+\documentclass[a4paper, 12pt, oneside, onecolumn, final, openany]{report}
 
 \input{utils/if-itb-thesis.sty}
 
@@ -20,9 +20,6 @@
 
 \bibliography{references}
 
-\begin{document}
-
-%Basic configuration
 \title{Laporan Tugas Akhir Teknik Informatika}
 \date{20 Juni 2020}
 \author{
@@ -30,21 +27,26 @@
 	NIM: 13516043
 }
 
+\usepackage{subfiles}
+
+\begin{document}
+
+% Basic configuration
 \pagenumbering{roman}
 \setcounter{page}{0}
 
-\input{chapters/cover}
+\subfile{chapters/cover}
 % ganti menjadi approval-single-advisor jika pembimbing 1 orang
-\input{chapters/approval-multiple-advisors}
-%    \input{chapters/approval-single-advisor}
-\input{chapters/statement}
+\subfile{chapters/approval-multiple-advisors}
+\subfile{chapters/approval-single-advisor}
+\subfile{chapters/statement}
 
 \pagestyle{plain}
 
 % Frontmatter
-\input{chapters/abstract-id}
-\input{chapters/abstract-en}
-\input{chapters/forewords}
+\subfile{chapters/abstract-id}
+\subfile{chapters/abstract-en}
+\subfile{chapters/forewords}
 
 % Hacks to capitalize all chapter-level titles in ToC
 \renewcommand*\contentsname{DAFTAR ISI}
@@ -85,11 +87,11 @@
 % Dafter Bab
 % Untuk menambahkan daftar bab, buat berkas bab misalnya `chapter-6` di direktori `chapters`, dan masukkan ke sini.
 %----------------------------------------------------------------%
-\input{chapters/chapter-1}
-\input{chapters/chapter-2}
-\input{chapters/chapter-3}
-\input{chapters/chapter-4}
-\input{chapters/chapter-5}
+\subfile{chapters/chapter-1}
+\subfile{chapters/chapter-2}
+\subfile{chapters/chapter-3}
+\subfile{chapters/chapter-4}
+\subfile{chapters/chapter-5}
 %----------------------------------------------------------------%
 
 % Daftar pustaka
@@ -114,8 +116,8 @@
 \titlespacing*{\chapter}{0pt}{-1.5\baselineskip}{\parskip}
 
 \begin{appendices}
-	\input{chapters/appendix-1}
-	\input{chapters/appendix-2}
+	\subfile{chapters/appendix-1}
+	\subfile{chapters/appendix-2}
 \end{appendices}
 
 \end{document}
