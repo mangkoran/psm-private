@@ -47,25 +47,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % use package biblatex
 \usepackage[backend=bibtex,
-            bibstyle=authoryear,
-            citestyle=authoryear,
-            sorting=nyt,
-            url=false,
-            maxcitenames=2,
-            maxnames=2,
-            dashed=false,
-            giveninits=true]{biblatex}
+	bibstyle=authoryear,
+	citestyle=authoryear,
+	sorting=nyt,
+	url=false,
+	maxcitenames=2,
+	maxnames=2,
+	dashed=false,
+	giveninits=true]{biblatex}
 \DeclareNameAlias{author}{last-first}
 
 % Translate bibliography strings ke bahasa indonesia
 %   (karena 'bahasa' belum di-support)
 \DefineBibliographyStrings{english}{%
-  bibliography = {Daftar Pustaka},
-  references = {Referensi},
-  and = {dan},
-  techreport = {Dok. teknis},
-  phdthesis = {Disertasi doktoral\adddot},
-  andothers = {dkk\adddot}
+	bibliography = {Daftar Pustaka},
+	references = {Referensi},
+	and = {dan},
+	techreport = {Dok. teknis},
+	phdthesis = {Disertasi doktoral\adddot},
+	andothers = {dkk\adddot}
 }
 
 % Field berikut tidak ditulis di daftar pustaka
@@ -79,7 +79,7 @@
 %% Beri titik setelah judul
 \DeclareFieldFormat
 [article,inbook,incollection,inproceedings,
-patent,unpublished,misc]
+	patent,unpublished,misc]
 {title}{#1\isdot}
 
 %% Judul buku ditulis italic
@@ -130,13 +130,13 @@ patent,unpublished,misc]
 % Format judul bab
 \chapterfont{\centering \large}
 \titleformat{\chapter}[display]
-  {\large\centering\bfseries}
-  {\chaptertitlename\ \thechapter}{0em}
-    {\large\bfseries\MakeUppercase}
+{\large\centering\bfseries}
+{\chaptertitlename\ \thechapter}{0em}
+{\large\bfseries\MakeUppercase}
 \titlespacing*{\chapter}
-	{0pt}
-	{-1.5\baselineskip}
-	{1.5\baselineskip}
+{0pt}
+{-1.5\baselineskip}
+{1.5\baselineskip}
 
 % Format judul section (dan sub(sub)section)
 \titleformat*{\section}{\bfseries\normalsize}
@@ -182,25 +182,25 @@ patent,unpublished,misc]
 \let\oldappendix\appendices
 
 \renewcommand{\appendices}{%
-  \clearpage
-  % From now, everything goes to the app file and not to the toc
-  \let\tf@toc\tf@app
-  \addtocontents{app}{\protect\setcounter{tocdepth}{1}}
-  \immediate\write\@auxout{%
-    \string\let\string\tf@toc\string\tf@app^^J
-  }
-  \oldappendix
+	\clearpage
+	% From now, everything goes to the app file and not to the toc
+	\let\tf@toc\tf@app
+	\addtocontents{app}{\protect\setcounter{tocdepth}{1}}
+	\immediate\write\@auxout{%
+		\string\let\string\tf@toc\string\tf@app^^J
+	}
+	\oldappendix
 }%
 
 \newcommand{\listofappendices}{%
-  \begingroup
-  \renewcommand{\contentsname}{\appendixtocname}
-  \let\@oldstarttoc\@starttoc
-  \def\@starttoc##1{\@oldstarttoc{app}}
-  % Reusing the code for \tableofcontents with different
-  %   \contentsname and different file handle app
-  \tableofcontents
-  \endgroup
+	\begingroup
+	\renewcommand{\contentsname}{\appendixtocname}
+	\let\@oldstarttoc\@starttoc
+	\def\@starttoc##1{\@oldstarttoc{app}}
+	% Reusing the code for \tableofcontents with different
+	%   \contentsname and different file handle app
+	\tableofcontents
+	\endgroup
 }
 \makeatother
 %%%
@@ -223,8 +223,8 @@ patent,unpublished,misc]
 % ---
 
 \usepackage[labelsep=period,
-justification=justified,
-format=hang]{caption}
+	justification=justified,
+	format=hang]{caption}
 \usepackage[labelformat=simple]{subcaption}
 %% Hack subfigure cross-ref agar pakai tanda kurung
 %%   e.g. Gambar II.2(a), bukan Gambar II.2a
@@ -243,15 +243,15 @@ format=hang]{caption}
 
 % Spasi single di environment table
 \AtBeginEnvironment{table}
-  {\renewcommand{\baselinestretch}{1.0}}
+{\renewcommand{\baselinestretch}{1.0}}
 
 % Font lebih kecil untuk tabel
 \AtBeginEnvironment{tabular}
-  {\small}
+{\small}
 
 % Spasi single di environment algorithm
 \AtBeginEnvironment{algorithm}
-  {\renewcommand{\baselinestretch}{1.0}}
+{\renewcommand{\baselinestretch}{1.0}}
 
 % Rename "Algorithm" into "Algoritma"
 \makeatletter
