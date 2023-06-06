@@ -2,22 +2,138 @@
 
 \begin{document}
 
-\chapter{TINJAUAN PUSTAKA}
+\chapter{LITERATURE REVIEW}
 
-Bab Studi Literatur digunakan untuk mendeskripsikan kajian literatur yang terkait dengan persoalan tugas akhir. Tujuan studi literatur adalah:
+Literature Review will discuss several concepts and technologies which will be used in the project.
+There will be discussion regarding computer security concepts according to several standards,
+followed by explanation of different types of firewalls and virtualization technologies, brief
+explanation of Kubernetes system, and concluded with summary of the chapter.
 
-\begin{enumerate}
-	\item menunjukkan kepada pembaca adanya gap seperti pada rumusan masalah yang memang belum terselesaikan,
-	\item memberikan pemahaman yang secukupnya kepada pembaca tentang teori atau pekerjaan terkait yang terkait langsung dengan penyelesaian persoalan, serta
-	\item menyampaikan informasi apa saja yang sudah ditulis/dilaporkan oleh pihak lain (peneliti/Tugas Akhir/Tesis) tentang hasil penelitian/pekerjaan mereka yang sama atau mirip kaitannya dengan persoalan tugas akhir.
-\end{enumerate}
+\section{Theoretical Basis}
 
-\section{Dasar Teori}
-Perujukan literatur dapat dilakukan dengan menambahkan entri baru di berkas \texttt{references.bib}. Ada dua cara untuk melakukan perujukan dalam teks utama: perujukan di akhir kalimat dan perujukan langsung. Perujukan di akhir kalimat dilakukan menggunakan perintah \texttt{\textbackslash parencite} seperti ini \parencite{knuth:2001:art}. Sedangkan menurut \textcite{vogels:2006:web} perujukan langsung di dalam kalimat seperti ini dilakukan dengan perintah \texttt{\textbackslash textcite}.
+\section{Computer Security}
 
-\section{Bekerja dengan Float}
+According to Paulsen \& Byers (2019), the term computer security can be described as a collection of
+actions and rules which ensure confidentiality, integrity, and availability of a certain information
+system property. This includes the physical hardware, underlying software, embedded firmware, and
+data that is transmitted, saved, and processed.
 
-Float adalah \textit{container} untuk elemen-elemen dokumen yang tidak dapat dipisah menjadi beberapa halaman. Environment ``table'' dan ``figure'' secara default adalah float. Float berguna untuk memudahkan peletakan objek yang tidak cukup jika diletakkan di halaman sekarang. Peletakan float diatur oleh \LaTeX\ dan pengguna sebaiknya memberikan keleluasaan kepada \LaTeX\ agar dapat mengatur peletakan dengan baik.
+Derived from above definition, three key objectives are introduced which are the core of computer
+security:
+
+\subsection{Confidentiality}
+
+The concept of Confidentiality covers the following two corresponding concepts:
+
+\begin{description}
+	\item[Data confidentiality] Assures that private or confidential information is not made
+		accessible or shared to unauthorized users.
+	\item[Privacy] Assures that personals manage or influence the collection and storage of
+		information related to them and by whom and to whom that information may be shared.
+\end{description}
+
+\subsection{Integrity}
+
+The concept of Integrity covers the following two corresponding concepts:
+
+\begin{description}
+	\item[Data integrity] Assures that information and programs are communicated through a particular
+		and authorized method.
+	\item[System integrity] Assures that a system serves its purpose in an unimpaired form, free from
+		deliberate or unintended unauthorized manipulation of the system.
+\end{description}
+
+\subsection{Availability}
+
+Assures that systems work properly and service is available authorized users.
+
+Another definition based on NIST standard FIPS 199 specifies the core of security goals for both
+information and information systems as confidentiality, integrity, and availability. FIPS 199
+establishes a classification of the aforementioned goals based on the condition and the
+understanding of security loss:
+
+\begin{description}
+	\item[Confidentiality] The term of confidentiality can be defined as the act of maintaining legal
+		restrictions on information access and sharing. This term includes the method for defending
+		privacy of an individual and private information.
+	\item[Integrity] The term integrity can be defined as the act of defending toward inappropriate
+		modification of information which result in information destruction, including maintaining
+		information non-repudiation and authenticity.
+	\item[Availability] The term availability can be defined as the act of ensuring information can be
+		accessed and used in reliable and promptly method.
+\end{description}
+
+While the aforementioned definition could be considered as well established, some computer security
+professionals further define additional concepts to present bigger picture. Two of the most commonly
+mentioned are follows:
+
+\begin{description}
+	\item[Authenticity] The characteristic of being legitimate and being able to be trusted and
+		verified. This characteristic will result in confidence in the legitimacy of transmission, a
+		message, or message author. This can be defined as verifying that users are the actual self that
+		they claim to be and that every message received by the system originated from a reliable
+		source.
+	\item[Accountability] The security objectives that create the condition for actions of an object
+		to be tracked down exclusively to that object. The concept includes deterrence, nonrepudiation,
+		intrusion detection and prevention, and fault isolation. In addition, the concept of
+		accountability also includes post-action restoration and judicial measures. As the fact that
+		fully secure system is not a realistic objective, user is required to track down a security
+		infringement in a system to a responsible team. Systems are required to safeguard the records of
+		their own activities to allow follow up forensic examination.
+\end{description}
+
+\section{Threats and Attacks}
+
+RFC 4949 defines four types of threat impacts and enumerates the attack types which result in every
+impact:
+
+\subsection{Unauthorized disclosure}
+
+A situation which an individual acquires access to certain data albeit the individual is not legitimate.
+
+\begin{description}
+	\item[Exposure] An unauthorized individual is able to directly access to critical data.
+	\item[Interception] An unauthorized individual interrupts critical data transmitted between
+		legitimate origins and destinations.
+	\item[Inference] A condition where an unauthorized individual is able to indirectly accesses
+		critical data by understanding from the attributes or results of communications.
+	\item[Intrusion] A condition where an unauthorized individual gains access to critical data by
+		evading or beating the security guard of a system.
+\end{description}
+
+\subsection{Deception}
+
+A condition which can lead in an authorized individual acquiring counterfeit data and assuming it to be the actual data.
+
+\begin{description}
+	\item[Masquerade] An unauthorized individual acquires access to a system or executes a harmful
+		action by disguising as an authorized individual.
+	\item[Falsification] A condition where an authorized individual is deceived by counterfeit data.
+	\item[Repudiation] A condition where an individual tricks another by falsely denying obligation
+		for a behavior.
+\end{description}
+
+\subsection{Disruption}
+
+A condition which interrupts or prevents the intended functionality of system services and utilities.
+
+\begin{description}
+	\item[Incapacitation] Interrupts system operation by incapacitating a component of the system.
+	\item[Corruption] Adversely mutates system operation by harmfully altering system data or functions.
+	\item[Obstruction] A condition where system operation is being impeded by a threat which result in
+		interruption of system services.
+\end{description}
+
+\subsection{Usurpation}
+
+A condition where an unauthorized individual takeover the control system services or functions.
+
+\begin{description}
+	\item[Misappropriation] A condition where an individual presume unauthorized control of physical
+		or logical resource of a certain system.
+	\item[Misuse] A condition which may lead a system component to execute a function or behavior that
+		is harmful to the security of the system.
+\end{description}
 
 \subsection{Gambar}
 
