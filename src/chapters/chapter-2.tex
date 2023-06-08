@@ -26,10 +26,13 @@ security:
 The concept of Confidentiality covers the following two corresponding concepts:
 
 \begin{description}
+
 	\item[Data confidentiality] Assures that private or confidential information is not made
 		accessible or shared to unauthorized users.
+
 	\item[Privacy] Assures that personals manage or influence the collection and storage of
 		information related to them and by whom and to whom that information may be shared.
+
 \end{description}
 
 \subsection{Integrity}
@@ -37,10 +40,13 @@ The concept of Confidentiality covers the following two corresponding concepts:
 The concept of Integrity covers the following two corresponding concepts:
 
 \begin{description}
+
 	\item[Data integrity] Assures that information and programs are communicated through a particular
 		and authorized method.
+
 	\item[System integrity] Assures that a system serves its purpose in an unimpaired form, free from
 		deliberate or unintended unauthorized manipulation of the system.
+
 \end{description}
 
 \subsection{Availability}
@@ -53,14 +59,18 @@ establishes a classification of the aforementioned goals based on the condition 
 understanding of security loss:
 
 \begin{description}
+
 	\item[Confidentiality] The term of confidentiality can be defined as the act of maintaining legal
 		restrictions on information access and sharing. This term includes the method for defending
 		privacy of an individual and private information.
+
 	\item[Integrity] The term integrity can be defined as the act of defending toward inappropriate
 		modification of information which result in information destruction, including maintaining
 		information non-repudiation and authenticity.
+
 	\item[Availability] The term availability can be defined as the act of ensuring information can be
 		accessed and used in reliable and promptly method.
+
 \end{description}
 
 While the aforementioned definition could be considered as well established, some computer security
@@ -68,11 +78,13 @@ professionals further define additional concepts to present bigger picture. Two 
 mentioned are follows:
 
 \begin{description}
+
 	\item[Authenticity] The characteristic of being legitimate and being able to be trusted and
 		verified. This characteristic will result in confidence in the legitimacy of transmission, a
 		message, or message author. This can be defined as verifying that users are the actual self that
 		they claim to be and that every message received by the system originated from a reliable
 		source.
+
 	\item[Accountability] The security objectives that create the condition for actions of an object
 		to be tracked down exclusively to that object. The concept includes deterrence, nonrepudiation,
 		intrusion detection and prevention, and fault isolation. In addition, the concept of
@@ -80,6 +92,7 @@ mentioned are follows:
 		fully secure system is not a realistic objective, user is required to track down a security
 		infringement in a system to a responsible team. Systems are required to safeguard the records of
 		their own activities to allow follow up forensic examination.
+
 \end{description}
 
 \section{Threats and Attacks}
@@ -89,39 +102,56 @@ impact:
 
 \subsection{Unauthorized disclosure}
 
-A situation which an individual acquires access to certain data albeit the individual is not legitimate.
+A situation which an individual acquires access to certain data albeit the individual is not
+legitimate.
 
 \begin{description}
+
 	\item[Exposure] An unauthorized individual is able to directly access to critical data.
+
 	\item[Interception] An unauthorized individual interrupts critical data transmitted between
 		legitimate origins and destinations.
+
 	\item[Inference] A condition where an unauthorized individual is able to indirectly accesses
 		critical data by understanding from the attributes or results of communications.
+
 	\item[Intrusion] A condition where an unauthorized individual gains access to critical data by
 		evading or beating the security guard of a system.
+
 \end{description}
 
 \subsection{Deception}
 
-A condition which can lead in an authorized individual acquiring counterfeit data and assuming it to be the actual data.
+A condition which can lead in an authorized individual acquiring counterfeit data and assuming it to
+be the actual data.
 
 \begin{description}
+
 	\item[Masquerade] An unauthorized individual acquires access to a system or executes a harmful
 		action by disguising as an authorized individual.
+
 	\item[Falsification] A condition where an authorized individual is deceived by counterfeit data.
+
 	\item[Repudiation] A condition where an individual tricks another by falsely denying obligation
 		for a behavior.
+
 \end{description}
 
 \subsection{Disruption}
 
-A condition which interrupts or prevents the intended functionality of system services and utilities.
+A condition which interrupts or prevents the intended functionality of system services and
+utilities.
 
 \begin{description}
+
 	\item[Incapacitation] Interrupts system operation by incapacitating a component of the system.
-	\item[Corruption] Adversely mutates system operation by harmfully altering system data or functions.
+
+	\item[Corruption] Adversely mutates system operation by harmfully altering system data or
+		functions.
+
 	\item[Obstruction] A condition where system operation is being impeded by a threat which result in
 		interruption of system services.
+
 \end{description}
 
 \subsection{Usurpation}
@@ -129,13 +159,16 @@ A condition which interrupts or prevents the intended functionality of system se
 A condition where an unauthorized individual takeover the control system services or functions.
 
 \begin{description}
+
 	\item[Misappropriation] A condition where an individual presume unauthorized control of physical
 		or logical resource of a certain system.
+
 	\item[Misuse] A condition which may lead a system component to execute a function or behavior that
 		is harmful to the security of the system.
+
 \end{description}
 
-\subsection{Firewall}
+\section{Firewall}
 
 A firewall is a network security system which placed between local network and the Internet to
 create a managed link and act as an external layer of security or boundary. The purpose of this
@@ -143,73 +176,357 @@ boundary is to safeguard the internal network from varying types of network-base
 In addition, firewall offers a centralized control point which security and monitoring are able to
 be established.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{../assets/chapter-2-infrastructure-diagram.png}
-	\caption{Contoh gambar}
-	\label{fig:contoh_gambar}
-\end{figure}
+\subsection{Firewall Types}
 
-\subsection{Tabel}
+A firewall has the functionality to supervise network traffic at multiple levels, from low-level
+network packets, either single or as portion of a flow, onto the entire traffic within a transport
+connection, up to examining the detailed information of application protocols. Firewall has
+different functionalities and protection capabilities depending on its types. It can inspect more
+than one protocol headers in every network packet, the content of every packet, or the arrangement
+produced by packet sequences.
 
-Tabel juga merupakan float. Tabel~\ref{table:contoh_tabel} adalah contoh tabel. Perhatikan bahwa walaupun didefinisikan setelah paragraf ini, tabel tidak diletakkan tepat di bawah paragraf ini pada dokumen hasil kompilasi. Hal ini karena ukuran (tinggi) tabel tidak cukup apabila diletakkan di sisa halaman ini. \LaTeX-lah yang mengatur peletakan tabel. Oleh karena itu tidak disarankan untuk merujuk tabel (dan objek float lain) dengan frasa ``Tabel di bawah ini'', ``Tabel berikut'', dan sebagainya.
+\begin{description}
 
-\begin{table}[htbp]
-	\centering
-	\caption{Contoh Tabel}
-	\label{table:contoh_tabel}
-	\begin{tabular}{ll}
-		\toprule
-		\multicolumn{1}{l}{\textbf{Contoh Judul Kolom}} & \multicolumn{1}{l}{\textbf{Nilai}} \\
-		\midrule
-		Besaran 1                                       & 12 meter                           \\
-		Besaran 2                                       & $360^\circ$                        \\
-		Besaran 3                                       & 0,2 meter                          \\
-		Besaran 4                                       & $1^\circ$                          \\
-		Besaran 5                                       & 8000 sampel/detik                  \\
-		\bottomrule
-	\end{tabular}
-\end{table}
+	\item[Packet Filtering Firewall] A packet filtering firewall utilizes packet filters which inspect
+		every packet that transmitted through the network. Afterward, based on the applied packet
+		filters by the administrator, the firewall will allow or deny the packets to enter or exit the
+		network. However, packet filtering firewall is known to be vulnerable to IP spoofing.
 
-\section{Persamaan Matematika}
+	\item[Circuit-Level Firewall] A circuit-level firewall can be either a dedicated appliance or a
+		specific utility implemented by an application-level firewall for specific applications. With
+		the same characteristics with an application-level firewall, this type of firewall has no
+		ability to enable an end-to-end TCP connection. Circuit-level firewall works by establishing
+		connection between two TCP port, one between the firewall and a TCP client on an internal
+		network host and another one between the firewall and a TCP client on an external network host.
+		After the two connections has been established, the gateway normally transmits segments of TCP
+		beginning from one connection to the opposite 15 connection without inspecting the contents. As
+		for the security aspects, the firewall will determine which of the connections are allowed.
 
-Persamaan~\eqref{eq:contoh_equation} adalah contoh persamaan matematika,
+	\item[Stateful Inspection Firewall] Stateful inspection firewall is also commonly known as third
+		generation firewall technology. This type of firewall works by reinforcing the TCP traffic rules
+		by utilizing the following techniques: traffic classification based on destination port of each
+		traffic and packet recording of each interaction with internal connections. The previously
+		mentioned technologies further increase the usability and helps broadening granularity of access
+		control.
 
-\begin{align}
-	c^2 = a^2 + b^2\,.
-	\label{eq:contoh_equation}
-\end{align}
+	\item[Application-Level Firewall] An application-level firewall, which also known as an
+		application proxy, serves as a forwarder of traffic on application-level. This type of firewall
+		provides layers of security mechanism on top of specified application, for example Telnet or FTP
+		servers. In addition, the firewall also defines rules for HTTP/HTTPS connections which
+		specifically built for every individual application to support identification and prevention of
+		malicious traffic to the network
 
-Contoh penggunaan notasi custom,
+\end{description}
 
-\begin{align}
-	\bayes{x}{y}\,.
-	\label{eq:contoh_equation_custom}
-\end{align}
+\subsection{Firewall Deployment}
 
-\section{Menulis Algoritma dan Pseudocode}
+Firewall system commonly deployed on a dedicated system which runs a specialized OS. The type of OS
+which the firewall runs varies between firewall manufacturers.
 
-Blok algoritma dan \textit{pseudocode} secara teknis juga merupakan sebuah float. Untuk dapat menggunakan algoritma ada beberapa \textit{package} yang perlu di-\textit{import} (sudah ter-\textit{import} di dokumen ini): \texttt{algorithm} dan \texttt{algpseudocode}. Algoritma \ref{alg:example} adalah contoh blok algoritma.
+Firewall utilities is also able to be implemented as a software module in an internet router or LAN
+switch, or in a server. This section will explain several additional firewall basing considerations.
 
-\begin{algorithm}
-	\begin{algorithmic}[1]
-		\Function{Example\_algorithm}{$a,b,c$}
-		\State $p \gets [~]$
-		\For {$a_i \in a$}
-		\If{$a_i > 0$}
-		\State $p_i \gets a_i + b$
-		\Else
-		\State $p_i \gets a_i - c$
-		\EndIf
-		\EndFor
-		\State \Return $p$
-		\EndFunction
-	\end{algorithmic}
-	\caption{Contoh Algoritma}
-	\label{alg:example}
-\end{algorithm}
+\begin{description}
 
-\section{Studi Terkait}
-\blindtext
+	\item[Hardware Firewall] A hardware firewall can be described as an actual hardware appliance
+		which provisions the traffic that went to and from a local network. To use this type of
+		firewall, the internet cable is initially routed to the firewall appliance, as opposed to
+		connecting it directly into the user device. The firewall is placed between the external network
+		and the local network device, allowing the firewall to offer malware protection and an
+		obstruction against intrusion
+
+	\item[Software Firewall] While hardware firewall requires a dedicated hardware to run the firewall
+		functionality, a software firewall could be installed on end-user device. Software firewall
+		usually packaged as an application which run on the background of a host device rather than
+		dedicated OS. Because of its characteristic, software firewall is more suited for personal use
+
+	\item[Virtual Firewall] A virtual firewall is a software firewall implementation which is running
+		on a virtual host managed by a hypervisor. As the firewall software is virtualized, the physical
+		network interface is also required to be virtualized or shared ("passed- through"). One of the
+		examples of physical device virtualization technology is Single Root I/O Virtualization (SR-IOV)
+		specification.
+
+\end{description}
+
+\section{Virtualization}
+
+Virtualization is computing technology which works by simulating an actual hardware function to
+provide software-based IT services such as networks, storages, servers, and applications.
+Virtualization technology works by using a software called hypervisors to establish a layer of
+abstraction on top of physical hardware of the computer which enables the hardware components of one
+computer (storage, processor, memory, etc.) to be shared or split into several virtual computers,
+often referred to virtual machine (VMs). Every VM executes its own operating system (OS) and
+operates like an independent computer albeit being run on only a fragment of the abstracted hardware
+
+Available resources are divided as required from the actual system into several virtual
+environments. This allows the users to interface with and execute computations inside the virtual
+environment, which commonly referred as guest machine or virtual machine.
+
+If a program or the user itself executes a command that demands additional resources from the actual
+hardware while the user is running the virtual environment, the hypervisor sends the request to the
+actual system and stores the modifications.
+
+\subsection{Hypervisor Types}
+
+Hypervisor is categorized under software layer application which manages VMs. Hypervisor functions
+as communication port that enables VMs to communicate and interact with the actual physical
+hardware, making sure that every VM has the ability to interact with the physical resources it
+requires to execute. In addition, hypervisor also prevent the VMs interfering one another by
+impinging on allocated memory space and compute cycles of other VM.
+
+Based on how its software run on the host system, hypervisor can be divided into two types:
+
+\begin{description}
+
+	\item[Type 1 or Bare-Metal] Type 1 hypervisors also commonly called bare-metal hypervisors. This
+		type of hypervisor communicates directly with the actual physical resources, substituting the
+		conventional operation system completely. Type 1 hypervisors commonly found in virtual or cloud
+		server environments.
+
+	\item[Type 2] This type of hypervisors run as a regular software on top of an installed OS. This
+		type of hypervisors mostly used for personal purposes, such as running alternative operating
+		system. Type 2 hypervisors are known to have performance overhead which 18 caused by their need
+		to access the host OS to access and manage the actual hardware resources.
+
+\end{description}
+
+\subsection{Virtualization Types}
+
+While the most common virtualization type is local desktop virtualization, it also exists other
+types of virtualization technology which are developed with specific use cases and purposes.
+
+\begin{description}
+
+	\item[Desktop Virtualization] Desktop virtualization allows its users to run multiple desktop
+		operating systems with each in its individual VM on the same computer system. Desktop
+		virtualization can be categorized into two types: local desktop virtualization and Virtual
+		Desktop Infrastructure (VDI).
+
+		Local desktop virtualization runs the hypervisor software on a local computer. This allows the
+		user to have more than one additional OS on their system and interchange to each OS as necessary
+		without being required to modify anything about the primary OS. On the other hand, Virtual
+		Desktop Infrastructure allows running several desktops in VMs on a single centralized server and
+		shares them to users who access it on the allowed devices. With this approach, VDI enables a
+		company to gain its users the ability to access variety of OSes regardless of the device,
+		without being required to install the OSes on any device.
+
+	\item[Network Virtualization] The term network virtualization refers to a software which help
+		create a "standpoint" of the network which allows an administrator to control the managed
+		network from a single control point. Network virtualization works by abstracting physical
+		hardware and functions (e.g., routers, switches, links, etc.) into software which managed by a
+		hypervisor. Network virtualization allows the network administrator to modify and control the
+		abstracted elements without being required to physically touch the actual physical hardware,
+		which significantly streamlines the management of the network.
+
+		There are several types of network virtualization. The first type is software- defined
+		networking (SDN) which works by virtualizing appliance which manages the routing of network
+		traffic, which also commonly recognized as the “control plane”. Another type of network
+		virtualization is network function virtualization (NFV) which works by virtualizing more than
+		one hardware system which offers a particular network function (e.g., a traffic analyzer, load
+		balancer, or firewall), allowing the virtualized appliances to become easier to set up, manage,
+		and monitor
+
+	\item[Storage Virtualization] Storage virtualization allows the entire of storage appliances which
+		exist in a network, regardless whether the storage is installed on a particular system or
+		separate dedicated storage units, to be accessed and controlled as one big storage device. In
+		particular, storage virtualization merges all blocks of storage into one big pool which allows
+		them to be allocated to any VM on the particular network as required. Storage virtualization
+		allows simpler storage monitoring for VMs and optimize utilization of every existing storage on
+		the particular network.
+
+	\item[Data Virtualization] Modern organizations store data from various applications, using
+		various file formats, in various locations, varying from the cloud to on-premise hardware and
+		software solutions. Data virtualization allows any application to access all of the stored data,
+		regardless of its source, format, or location.
+
+		Data virtualization utilities establish a software layer between the applications accessing the
+		data and the systems where the data is stored. The layer interprets data request of a certain
+		application or query as required and provides results that might be retrieved from several
+		systems. This kind of virtualization enables the ability to break down data depots in case of
+		other kinds of data integration are not affordable, desirable, or feasible
+
+	\item[Application Virtualization] Application virtualization runs application software in a
+		virtualized environment aside from directly install the application on the OS of the user. By
+		using this method, it provides different approach from full-fledged desktop virtualization as
+		the virtual environment only runs the defined application, while the end user OS on their device
+		runs without being virtualized. The following are the categories of application virtualization:
+		Local appliation virtualization, application streaming, and server-based application
+		virtualization.
+
+		In local application virtualization, The whole application will be run on the end device
+		although it will be run in a contained environment in contrast to the actual hardware. In recent
+		years, this technology has been evolving to what commonly known as "containerization"
+
+		Mewnhile, application streaming allow the application to be hosted on a server which shares a
+		portion of the software to be executed on the user device when required.
+
+		In server-based application virtualization, user will use the software that act as the
+		application’s user interface to access the actual application which runs fully on the server.
+
+	\item[Data Centre Virtualisation] Data center virtualization works by abstracting the entire
+		hardware of the data center into software, allowing an administrator to segment a single actual
+		hardware data center into many virtual data centers to be used by various users.
+
+		Every user of the virtualized data center is able to interact with its own infrastructure as a
+		service (IaaS), which is being run on the same actual system. Virtual data centers allow a
+		smooth transition into cloud-based computing, enabling an organization to rapidly configure
+		full-fledged data center environment without being required to purchase infrastructure hardware.
+
+	\item[CPU Virtualization] Central processing unit (CPU) virtualization is one of the core
+		technologies that enables hypervisors, virtual machines, and operating systems development. The
+		technology allows one CPU to be partitioned into multiple virtual CPUs for use by several VMs.
+
+	\item[GPU Virtualization] A graphical processing unit (GPU) is a specialized multi core processor
+		that optimizes the performance of the computer system by addressing heavy-load graphic or
+		arithmetic processing. This type of virtualization allows several VMs to use some or even the
+		entirety of the processing power of a single or multiple GPUs for improved video encoding and
+		decoding, artificial intelligence (AI) inferencing, and other kinds of heavy computational
+		tasks.
+
+	\item[Linux Virtualization] Since the release of version 2.6.20, users using Linux are able to use
+		Linux based hypervisor, widely known as the kernel-based virtual machine (KVM). The Linux KVM is
+		supported by Intel and AMD-based virtualization processor extensions that enables its users to
+		virtualize VMs which is based on x86 from within a Linux host OS.
+
+	\item[Cloud Virtualisation] The cloud computing system model heavily relies on virtualization
+		technology. The usage of virtualization technology for its hardware such as storage, processor,
+		memory and other server components allow cloud computing providers to offer a wide variety of
+		utilities to their customers.
+
+\end{description}
+
+\section{Current System Analysis}
+
+In the present days, consumer who are subscribed to internet service provided by an Internet Service
+Provider (ISP) mostly provided with a router that capable to transmit its connection over Wi-Fi to
+local device. This kind of router, often called home router, provide basic functionality as a
+network router which allows the local user to access the Internet. However, most kinds of home
+router have minimal network security capability.
+
+In the other hand, enterprise firewall solution addresses the requirement for proper and extensive
+network security for its customer’s network. Several specialized functionalities such as firewall
+rule, traffic shaping, and intrusion detection are mostly only available in enterprise firewall
+appliance. However, this kind of firewall has high price. This makes implementing proper network
+security in home network environment considerably hard.
+
+To study and analyze the capabilities and shortcomings of currently existing firewall systems, two
+devices are chosen to be inspected: one home router device and one enterprise-grade firewall device.
+The first device chosen is Kaon AR2140, the router that provided by Maxis for its Maxis Fiber
+subscriber. The Kaon AR2140 main features are support for Wi-Fi 6 and EasyMesh certification.
+
+For the enterprise firewall device, Deciso DEC675 is chosen to be compared. The DEC675 is a desktop
+security appliance sold by Deciso, the parent company of OPNsense. While it is commercialized, it
+utilizes the open-source OPNsense firewall operating system at its core. The only addition is
+limited Business Edition license, which includes access to commercial firmware repository and
+professional support. Since it uses OPNsense, it offers the same security and networking features
+that offered by OPNsense.
+
+\section{Comparison Between Current Systems}
+
+\section{Technology Used}
+
+\subsection{Deployment Infrastructure}
+
+\subsection{Virtualisation Platform}
+
+Virtualization allows users to create multiple virtual machines running different operating system
+(OS) abstracted from its hardware resources. As the use case of these virtual machines may vary from
+one deployment to the other, there are several virtualization environment solutions available for
+users.
+
+VirtualBox is one of the most widely used virtualization platform. VirtualBox can be categorized as
+type 2 hypervisor originally developed by Innotek GmbH, now acquired by Oracle Corporation. As a
+type 2 hypervisor, VirtualBox can be installed on an existing OS installation without the need to
+format and initialize from zero. It allows the creation and virtualization of any x86-compatible OS
+on top of several supported OS, which are: OpenSolaris, Solaris, Linux, macOS, and Microsoft
+Windows. VirtualBox is a free and open-source software, released under GNU General Public License,
+although it has proprietary optional Extension Pack available.
+
+VMware Workstation is another popular type 2 hypervisor virtualization platform. VMware Workstation
+is developed by VMware, initially released in 1999. It has most of the features that VirtualBox has,
+with several additional capabilities such as allow higher VM video memory, support more recent
+version of DirectX and OpenGL, and have out-of-the-box support for USB peripherals. However, as
+VMware Workstation is a trialware, user is required to purchase a license in order to use it beyond
+its trial limit.
+
+Another option is Proxmox Virtual Environment (Proxmox VE). Proxmox VE is developed by Proxmox
+Server Solutions GmbH, with its first release made it to public on 15 April 2008. Proxmox VE can be
+categorized as type 1 hypervisor, as it leverages the usage of KVM or QEMU and does not require any
+base OS for its deployment. Being type 1 or native hypervisor, Proxmox VE has lower overhead
+compared to type 2 or software hypervisor as it runs on bare metal, allowing its hypervisor to
+communicate directly with the underlying hardware components. Additionally, Proxmox VE also support
+Linux Container (LXC) which utilize OS- level virtualization. As the result, LXC has minimal
+overhead compared to other virtualization method. Instead of creating an entire virtual machine, LXC
+achieves its virtualization by utilizing virtual environment which has separate network and process
+space. Proxmox VE is free and open-source software, released under GNU Affero General Public License
+version 3 with optional paid subscription to gain access to their Enterprise repository and
+professional support team.
+
+VMware ESXi is also an alternative option for virtualization platform. VMware ESXi, as stated in its
+name, is developed by VMware as type 1 hypervisor capable for deploying and managing virtual
+machines. It was first released on 23 March 2001, with current stable version is 7.0 at the time of
+writing. VMware ESXi benefits from being a type 1 or native hypervisor, such as lower process
+overhead and smaller footprint. VMware ESXi is released under proprietary license, meaning that in
+order to use the program fully without being limited to free trial, user must purchase vSphere
+subscription which cost around USD 580 for its most affordable tier at the time of writing.
+
+Based on several justifications that follow, Proxmox VE is chosen as the virtualization platform for
+the system development project. Proxmox VE is a free and open-source software, meaning that it can
+be fully utilized without the need to purchase the software or even subscription. Furthermore,
+Proxmox VE is a type 1 or native hypervisor, which has less overhead and more controls over type 2
+hypervisor. It also supports LXC which will help Pi-hole deployment on the system
+
+\subsection{Firewall System}
+
+In order to establish a proper network security for home network, a suitable and capable firewall
+system must be used. Several firewall operating systems are available publicly, each of them has
+different feature set and optimized use case.
+
+OpenWrt is a free and open-source embedded operating system optimized for embedded device for
+network traffic routing. OpenWrt is developed based on Linux, BusyBox, musl, and util-linux. Every
+part of the OS has gone through optimization to be as small as possible to fit into home routers
+which have limited amount of memory and storage. OpenWrt has common networking features such as but
+not limited to packet routing, NAT, DHCP, and DNS. Being a free and open-source project allows the
+development of many additional extension which add various extra functionality to OpenWrt, such as
+but not limited to mesh networking, IPS, active queue management, and IP tunneling. Furthermore, it
+requires zero cost to deploy and utilize OpenWrt as it is provided through GNU General Public
+License.
+
+Another option is pfSense. pfSense is a firewall and router operating system distribution which is
+developed on top of FreeBSD. pfSense has different main development objective than OpenWrt. Rather
+than developing minimalist networking OS solution for embedded system, pfSense is developed with
+network firewall as its primary core. Because of that, it has more network security features built
+into the core OS compared to OpenWrt, such as but not limited to WireGuard, traffic shaping, IPsec,
+and L2TP VPN. Initially, pfSense is developed as a the m0n0wall project’s fork. Since then, Netgate
+continue its development by dividing into two producs: pfSense Community Edition (pfSense CE) and
+pfSense Plus (formerly pfSense Factory Edition). pfSense CE is released under open-source Apache
+License 2, while pfSense Plus is released as proprietary product, mostly come pre-installed in
+Netgate networking appliances. Although Netgate still continue the development of pfSense CE, it is
+updated less often than pfSense Plus, as Netgate shifted their focus to more profitable product.
+
+As a response to several concern of the future direction of pfSense open-source project, a fork of
+the project is created under the name OPNsense. The OPNsense project is started as fork of pfSense
+project after the original m0n0wall project was announced to be discontinued. OPNsense is currently
+developed with Deciso B.V. as its main contributor and supervisor. Most of OPNsense features are
+similar to pfSense, with more frequent release and transparent development roadmap. OPNsense is
+released under BSD 2-Clause “Simplified” license. Because of that, all of OPNsense source code are
+available to public, including its build tools and utilities. In contrast, pfSense only released the
+code for its “core” component only, with its build tools remain private.
+
+With regards to several considerations, OPNsense will be used as the firewall system for the
+project’s system. One of the main justifications is its software licensing and capability. OPNsense
+has clear and straightforward BSD 2-Clause license, which allows both personal and enterprise
+deployment at no cost. Moreover, OPNsense development is primarily focused on firewall and network
+security capability, in contrast to OpenWrt which is developed for embedded system networking. This
+makes OPNsense more suitable platform to build home network security infrastructure.
+
+\section{Summary}
+
+This chapter discussed the definition of computer security, followed by comparison of currently
+existing solutions, along with technology used in the system. Currently existing solution may
+unsuitable for use by small business that requires a more capable firewall system in an affordable
+price point. This project tries to develop a low-cost firewall appliance by implementing virtualized
+firewall OS on a consumer PC. The usage of consumer PC allows the user to upgrade the system in
+later time if their requirement becoming more demanding.
 
 \end{document}
