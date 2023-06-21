@@ -2,12 +2,54 @@
 
 \begin{document}
 
-\chapter{PENUTUP}
+\chapter{IMPLEMENTATION AND TESTING}
 
-\section{Kesimpulan}
-\blindtext
+Impelementation and Testing chapter explains the system impelementation which includes the
+configuration lines of the system that were carried out as continuation from the design and analysis
+phase. This phase is exceedingly critical for the project as ... achieve the system requirements.
 
-\section{Saran}
-\blindtext
+Both black-box and white-box testing will be employed to ensure the functionality and system
+internals are operating correctly to meet the system requirements.
+
+\section{Main System Functionality Code}
+
+In this section, the code of main functionality of the system will be attached and followed by the
+explanation of the respective code. The complete details of the code design will be documented in
+Appendix A.
+
+\subsection{OPNSense}
+
+The previous are the Ansible playbook and task to bootstrap a KVM virtual machine that will host
+OPNSense firewall. The Ansible playbook will firstly check whether a KVM virtual machine with the
+name opnsense1 is already existed. If there is no such virtual machine, the Ansible playbook will
+create a new KVM virtual machine. As with any KVM virtual machine, manual installation procedure is
+required for the initial OPNSense setup by booting the virtual machine with OPNSense installation
+image ISO file.
+
+\subsection{Pi-hole}
+
+The previous are the Ansible playbook and task to bootstrap an Ubuntu LXC container that will host
+Pi-hole DNS server. The Ansible playbook will firstly check whether an LXC container with the name
+pihole1 is already existed. If there is no such container, the Ansible playbook will create a new
+Ubuntu container. After a new container is created, the Ansible playbook will check whether pihole
+program is already installed. If there is no pihole program installed, the Ansible playbook will
+proceed to install pihole using officially provided install script. Before the installation, the
+Ansible playbook will ensure the required dependencies are installed. Followed by that, the Ansible
+playbook will copy the unattended setup configuration file from the control node to the pihole1
+container. After both the dependencies and setup configuration exist, the Ansible playbook will
+install pihole using the install script.
+
+In addition to the Pi-hole DNS server, the Ansible playbook will configure Rsyslog so that any DNS
+action log produced by Pi-hole will be forwarded to the monitoring1 container for log processing.
+
+\subsection{Monitoring}
+
+The previous are the Ansible playbook and task to bootstrap an Ubuntu LXC container that whill host
+the monitoring stack of the system. The monitoring stack consists of Vector, Prometheus, Loki, and
+Grafana. The ansible playbook will firstly check whether an LXC container with the name monitoring1
+is already existed. If there is no such container, the Ansible playbook will create a new Ubuntu
+container.
+
+% https://blog.dmcindoe.dev/posts/2021-07-31/automating-proxmox-with-ansible/
 
 \end{document}
