@@ -24,14 +24,24 @@ OPNSense firewall. The Ansible playbook will firstly check whether a KVM virtual
 name opnsense1 is already existed. If there is no such virtual machine, the Ansible playbook will
 create a new KVM virtual machine. As with any KVM virtual machine, manual installation procedure is
 required for the initial OPNSense setup by booting the virtual machine with OPNSense installation
-image ISO file.
+image ISO file. The initial setup will prompt for network interface assignment.
+
+After the OPNSense network interface has been configured, the OPNSense web GUI can be accessed from
+OPNSense LAN IP address to configure API keys for management through Ansible. By using the API keys,
+several OPNSense module can be configured through Ansible. In this project, the Ansible playbook
+will be used to configure firewall rules, Unbound DNS server, Suricata intrusion prevention system,
+Telegraf system metrics scraper, and syslog forwarding targets. Syslog will forward firewall
+filterlog and Suricata alert to monitoring1 container which will be processed and sanitized by
+Vector.
 
 \subsection{Pi-hole}
 
 The previous are the Ansible playbook and task to bootstrap an Ubuntu LXC container that will host
 Pi-hole DNS server. The Ansible playbook will firstly check whether an LXC container with the name
 pihole1 is already existed. If there is no such container, the Ansible playbook will create a new
-Ubuntu container. After a new container is created, the Ansible playbook will check whether pihole
+Ubuntu container.
+
+If an LXC container with the name pihole1 is existed, the Ansible playbook will check whether pihole
 program is already installed. If there is no pihole program installed, the Ansible playbook will
 proceed to install pihole using officially provided install script. Before the installation, the
 Ansible playbook will ensure the required dependencies are installed. Followed by that, the Ansible
@@ -40,15 +50,58 @@ container. After both the dependencies and setup configuration exist, the Ansibl
 install pihole using the install script.
 
 In addition to the Pi-hole DNS server, the Ansible playbook will configure Rsyslog so that any DNS
-action log produced by Pi-hole will be forwarded to the monitoring1 container for log processing.
+action log produced by Pi-hole will be forwarded to the monitoring1 container which will be
+processed and sanitized by Vector.
 
 \subsection{Monitoring}
 
 The previous are the Ansible playbook and task to bootstrap an Ubuntu LXC container that whill host
-the monitoring stack of the system. The monitoring stack consists of Vector, Prometheus, Loki, and
+the monitoring stack of the system. The monitoring stack consists of Vector, Loki, Prometheus, and
 Grafana. The ansible playbook will firstly check whether an LXC container with the name monitoring1
 is already existed. If there is no such container, the Ansible playbook will create a new Ubuntu
 container.
+
+If an LXC container with the name monitoring1 is existed, the Ansible playbook will check whether
+the monitoring stack programs are already installed, which are Vector, Loki, Prometheus, and
+Grafana. If there are not any of the monitoring stack programs, the Ansible playbook will proceed to
+install the missing programs through apt package manager. In addition, Vector and Grafana apt
+repository will be configured before Vector, Loki, and Grafana can be installed through apt package
+manager. Followed by the that, the Ansible playbook will copy the monitoring stack configuration
+files from the control node to the monitoring1. After the configuration files copied to their
+respective path, the respective program systemd service will be restarted or reloaded to make them
+load the new configuration.
+
+\subsubsection{Vector}
+
+Vector is a data pipeline which allow user to collect, transform, and route any log, metric, and
+traces to various sinks. In this project, Vector is used to process syslog data received from
+opnsense1 virtual machine and pihole1 container.
+
+Vector will filter the received syslog based on their appname. In this case, Vector will filter and
+segregate the syslog to filterlog, suricata, and pihole. Afterwards, Vector will do field remapping
+which sanitize the log to only includes useful information. For filterlog log, Vector will enrich
+the filterlog with GeoIP information, embedding additional geolocation data to the filterlog.
+Lastly, Vector will ship the processed log to Loki for log storage
+and query.
+
+\subsubsection{Loki}
+
+Grafana Loki is a log aggregation system in Grafana Open Source stack which allow user to store and
+query application log. In this project, Loki is used to store processed syslog from Vector.
+Afterwards, these stored log will act as data source for Grafana dasboard, allowing log
+visualization through LogQL query language.
+
+\subsubsection{Prometheus}
+
+Prometheus is a system monitoring and alerting toolkit which allow appplication and system metric
+collection and storage. In this project, Prometheus is used to store system metric of all virtual
+machines and containers in the system, which include opnsense1 virtual machine, pihole1 container,
+and monitoring1 container. Telegraf will scrape several system metric, such as ...
+
+This system metric  will be collected and stored by Prometheus. The stored metrics will act as data
+source for Grafana dashboard for metric visualization through PromQL query language.
+
+\subsubsection{Vector}
 
 % https://blog.dmcindoe.dev/posts/2021-07-31/automating-proxmox-with-ansible/
 
