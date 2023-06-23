@@ -29,10 +29,18 @@ image ISO file. The initial setup will prompt for network interface assignment.
 After the OPNSense network interface has been configured, the OPNSense web GUI can be accessed from
 OPNSense LAN IP address to configure API keys for management through Ansible. By using the API keys,
 several OPNSense module can be configured through Ansible. In this project, the Ansible playbook
-will be used to configure firewall rules, Unbound DNS server, Suricata intrusion prevention system,
-Telegraf system metrics scraper, and syslog forwarding targets. Syslog will forward firewall
-filterlog and Suricata alert to monitoring1 container which will be processed and sanitized by
-Vector.
+will be used to configure firewall rules, Suricata intrusion detection system, Telegraf metric
+collector and forwarder agent, and syslog forwarding targets. 
+
+\subsubsection{Firewall}
+
+\subsubsection{Suricata}
+
+Suricata is a network intrusion detection system maintained by Open Information Security Foundation
+(OISF). In this project, Suricata is used to watch local network traffic pattern and trigger alert
+if a pattern matches known suspicious traffic pattern.
+
+\subsubsection{Telegraf}
 
 \subsection{Pi-hole}
 
@@ -101,7 +109,22 @@ and monitoring1 container. Telegraf will scrape several system metric, such as .
 This system metric  will be collected and stored by Prometheus. The stored metrics will act as data
 source for Grafana dashboard for metric visualization through PromQL query language.
 
-\subsubsection{Vector}
+\subsubsection{Grafana}
+
+Grafana is a data visualization platform which allow user to make query, create visualization, and
+setup alert of system metric, event log, and application trace. In this project, Grafana is used to
+create visualization dashboard of firewall event, DNS query log, IPS action, and virtual machine and
+containers system metric.
+
+\section{System Testing}
+
+In Testing section, several system main functionality will be examined for the purpose of ensuring
+the system capabilities to fulfill the project requirements. In this project, both black-box and
+white-box testing is utilized with each having different purpose.
+
+\subsection{Black-box Testing}
+
+\subsection{White-box Testing}
 
 % https://blog.dmcindoe.dev/posts/2021-07-31/automating-proxmox-with-ansible/
 
