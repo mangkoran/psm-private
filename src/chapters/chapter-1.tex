@@ -7,39 +7,112 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-For the past few years, people have seen the rapid growth of information and communication technology, both the development and application in their everyday life. Since the world becoming more interconnected, the adoption of technology continues to be among the deciding factors in the development of modern human civilization. A study conducted by Pew Research shows that among American households in 2018, 92 percent of them had one type of computer at the minimum and 85 percent of them were subscribed to a broadband Internet service. The personal computer and the Internet have becoming two important technologies in the daily personal and work life of most people. Both information technologies allow humans to socialize with each other, continue their work from home or other places, and fulfil their entertainment needs. Furthermore, the emergence of Industry Revolution 4.0 introduces various breakthrough in the applications of information and communication technology. Among the new innovations is the Internet-of-Things (IoT), an idea of computer science which is used to make regular devices "intelligent". IoT enables the development of smart home appliances, such as doorbells that capture real-time footage of the front door, refrigerators that notify its owner whenever their vegetables run out, and televisions that play TV shows and movies that requested by their owners using voice command. It is forecasted that 21 percent of households worldwide will become smart homes by 2025. This increase will be stimulated by smart lighting and controls and consumer electronics, with the latter contributing up to 40 percent of the total IoT products in smart home by 2021.
+For the past few years, people have seen the rapid growth of information and communication
+technology, both the development and application in their everyday life. Since the world becoming
+more interconnected, the adoption of technology continues to be among the deciding factors in the
+development of modern human civilization. A study conducted by Pew Research shows that among
+American households in 2018, 92 percent of them had one type of computer at the minimum and 85
+percent of them were subscribed to a broadband Internet service. The personal computer and the
+Internet have becoming two important technologies in the daily personal and work life of most
+people. Both information technologies allow humans to socialize with each other, continue their work
+from home or other places, and fulfil their entertainment needs. Furthermore, the emergence of
+Industry Revolution 4.0 introduces various breakthrough in the applications of information and
+communication technology. Among the new innovations is the Internet-of-Things (IoT), an idea of
+computer science which is used to make regular devices "intelligent". IoT enables the development of
+smart home appliances, such as doorbells that capture real-time footage of the front door,
+refrigerators that notify its owner whenever their vegetables run out, and televisions that play TV
+shows and movies that requested by their owners using voice command. It is forecasted that 21
+percent of households worldwide will become smart homes by 2025. This increase will be stimulated by
+smart lighting and controls and consumer electronics, with the latter contributing up to 40 percent
+of the total IoT products in smart home by 2021.
 
-Information and communication technology, in the shape of physical and digital assets, are uniquely new kinds of personal property in this digital age. Home networks, every device connected to it, including personal computers and smart devices, and even the data stored inside previously mentioned devices should be treated carefully and protected under an adequate network security measure. Personal data and even devices access control are two of many private assets that individual might not want them to be accessed or even tampered by unknown outsiders. Internet Service Provider (ISP) most of the time provide their home internet subscriber a basic router with Wi-Fi capability. However, the supplied router often has limited capabilities for securing the home network. Home users can always purchase third party router with more features; however, it will still cost them a fair amount of money.
+Information and communication technology, in the shape of physical and digital assets, are uniquely
+new kinds of personal property in this digital age. Home networks, every device connected to it,
+including personal computers and smart devices, and even the data stored inside previously mentioned
+devices should be treated carefully and protected under an adequate network security measure.
+Personal data and even devices access control are two of many private assets that individual might
+not want them to be accessed or even tampered by unknown outsiders. Internet Service Provider (ISP)
+most of the time provide their home internet subscriber a basic router with Wi-Fi capability.
+However, the supplied router often has limited capabilities for securing the home network. Home
+users can always purchase third party router with more features; however, it will still cost them a
+fair amount of money.
 
-This project is aimed to provide proof-of-concept in developing home network security by utilizing enterprise-grade firewall deployed on virtualized environment on a personal computer (PC). The firewall is able to be configured according to the use case of the user, with additional advanced features and controls which can be found in enterprise firewall appliance. The usage of PC in this project is intended to make the firewall deployment flexible; any PC that fulfil the minimum requirements should be able to be used as the host of the firewall system.
+This project is aimed to provide proof-of-concept in developing home network security by utilizing
+enterprise-grade firewall deployed on virtualized environment on a personal computer (PC). The
+firewall is able to be configured according to the use case of the user, with additional advanced
+features and controls which can be found in enterprise firewall appliance. The usage of PC in this
+project is intended to make the firewall deployment flexible; any PC that fulfil the minimum
+requirements should be able to be used as the host of the firewall system.
 
 \section{Problem Background}
 
-According to IBM (2021), the global average total cost of a data breach soars to USD 4.24 million, increased from USD 3.86 million in 2020. This nearly 10\% increased cost by far the largest in the last seven years. Costs were notably lower for organizations which have more mature security posture, while higher for organizations that lagged in areas such as security AI and automation, zero trust and cloud security.
+According to IBM (2021), the global average total cost of a data breach soars to USD 4.24 million,
+increased from USD 3.86 million in 2020. This nearly 10\% increased cost by far the largest in the
+last seven years. Costs were notably lower for organizations which have more mature security
+posture, while higher for organizations that lagged in areas such as security AI and automation,
+zero trust and cloud security.
 
-One of the reasons why small business is particularly vulnerable to cyberattacks is inadequate or the absence of computer and network security. Business often struggles to achieve an effective security infrastructure because of the complexity of managing varying security solutions.
+One of the reasons why small business is particularly vulnerable to cyberattacks is inadequate or
+the absence of computer and network security. Business often struggles to achieve an effective
+security infrastructure because of the complexity of managing varying security solutions.
 
-One of the possible solutions to secure local area network is by using a hardware firewall. Hardware firewall (also known as network-based firewall) offers several benefits compared to software firewall. Hardware firewall runs on its own hardware, meaning that increases in traffic volume or security requirements do not impact the performance of protected machines. As hardware firewall is a single appliance that protects the entire network, any updates or configuration changes that are required can be applied once and will instantly apply to all devices protected by the firewall. Furthermore, hardware firewall enables centralized network monitoring and logging.
+One of the possible solutions to secure local area network is by using a hardware firewall. Hardware
+firewall (also known as network-based firewall) offers several benefits compared to software
+firewall. Hardware firewall runs on its own hardware, meaning that increases in traffic volume or
+security requirements do not impact the performance of protected machines. As hardware firewall is a
+single appliance that protects the entire network, any updates or configuration changes that are
+required can be applied once and will instantly apply to all devices protected by the firewall.
+Furthermore, hardware firewall enables centralized network monitoring and logging.
 
-Currently, the existing solution which is an enterprise-grade firewall has high operating cost if viewed from small business' perspective. In addition to purchasing the hardware, the user is required to have an active subscription so that the user can maximize the functionality of the firewall.
+Currently, the existing solution which is an enterprise-grade firewall has high operating cost if
+viewed from small business' perspective. In addition to purchasing the hardware, the user is
+required to have an active subscription so that the user can maximize the functionality of the
+firewall.
 
-This project is proposed to address the limitation mentioned above. This project tries to develop a proof-of-concept of a hardware firewall which has extensive functionality with an affordable price for small business to operate.
+This project is proposed to address the limitation mentioned above. This project tries to develop a
+proof-of-concept of a hardware firewall which has extensive functionality with an affordable price
+for small business to operate.
 
-Besides supporting human in their daily life routine, the widespread usage of information and communication technology in households also introduces another type of risks and threats towards ICT assets, both physical and digital form. Additionally, individuals in the home network environment are far less capable and prepared to address cyberattacks and intruders. Because of that, individuals at home are clueless to some extent as they may have no idea what is or may happen to their home, home devices, the data stored within the devices, and more terrifying, their own personal lives as attackers are now able to do physical harm to individuals inside the home. Moreover, as detailed by Zetter, it is possible for hackers to perform attack against home or even business automation and security systems through power lines. Using this conduit, the hackers can, through remote commands, take control of a multitude of devices, such as lights, electronic locks, heating and air conditioning systems, and security alarm and cameras. This exploit is possible as the systems operate on Ethernet networks that communicate over the existing power lines in the home.
+Besides supporting human in their daily life routine, the widespread usage of information and
+communication technology in households also introduces another type of risks and threats towards ICT
+assets, both physical and digital form. Additionally, individuals in the home network environment
+are far less capable and prepared to address cyberattacks and intruders. Because of that,
+individuals at home are clueless to some extent as they may have no idea what is or may happen to
+their home, home devices, the data stored within the devices, and more terrifying, their own
+personal lives as attackers are now able to do physical harm to individuals inside the home.
+Moreover, as detailed by Zetter, it is possible for hackers to perform attack against home or even
+business automation and security systems through power lines. Using this conduit, the hackers can,
+through remote commands, take control of a multitude of devices, such as lights, electronic locks,
+heating and air conditioning systems, and security alarm and cameras. This exploit is possible as
+the systems operate on Ethernet networks that communicate over the existing power lines in the home.
 
-To safeguard the home network, one of the possible actions that homeowner and home LAN user can take is to implement a network firewall. They need a dedicated network firewall in order to achieve trustworthy protection for private network. Most of the time, home network subscribers are provided a router by their ISP. The router acts as home gateway, network router, and access points for the home network, providing Internet access for its users in the household. However, the default ISP router commonly have limited networking features and capabilities, including network security. The device also needs to be properly configured and managed in accordance to the usage and requirements of the users inside the household.
+To safeguard the home network, one of the possible actions that homeowner and home LAN user can take
+is to implement a network firewall. They need a dedicated network firewall in order to achieve
+trustworthy protection for private network. Most of the time, home network subscribers are provided
+a router by their ISP. The router acts as home gateway, network router, and access points for the
+home network, providing Internet access for its users in the household. However, the default ISP
+router commonly have limited networking features and capabilities, including network security. The
+device also needs to be properly configured and managed in accordance to the usage and requirements
+of the users inside the household.
 
 \section{Goal}
 
-The aim of this system development project is to develop home network security measure by using available or affordable hardware.
+The aim of this system development project is to develop home network security measure by using
+available or affordable hardware.
 
 \section{Objectives}
 
-The objectives of this system development is to implement network security infrastructure in home network environment by utilizing open-source network firewall hosted on personal computer. Specifically, the objectives of this project are:
+The objectives of this system development is to implement network security infrastructure in home
+network environment by utilizing open-source network firewall hosted on personal computer.
+Specifically, the objectives of this project are:
 
 \begin{enumerate}
-	\item To develop home network security infrastructure by employing network firewall system hosted on a PC
-	\item To examine the effectiveness of the developed system to secure home network
+
+  \item To develop home network security infrastructure by employing network firewall system hosted
+    on a PC
+
+  \item To examine the effectiveness of the developed system to secure home network
+
 \end{enumerate}
 
 \section{Scope}
@@ -47,16 +120,38 @@ The objectives of this system development is to implement network security infra
 The scope for this project are specified below:
 
 \begin{enumerate}
-	\item The project will only cover in configuring existing firewall operating system on personal computer. Any feature or issue that might be found in future development phase related to the software should refer to respective development repository
-	\item The exact hardware specification is not explicitly defined as users might opt for different specification depending on their budget. The project will only state the minimum hardware specification for optimal use based on the user requirements. Any performance-based metrics could be measured; however, it will not be compared
+
+  \item The project will only cover in configuring existing firewall operating system on personal
+    computer. Any feature or issue that might be found in future development phase related to the
+    software should refer to respective development repository
+
+  \item The exact hardware specification is not explicitly defined as users might opt for different
+    specification depending on their budget. The project will only state the minimum hardware
+    specification for optimal use based on the user requirements. Any performance-based metrics
+    could be measured; however, it will not be compared
 
 \end{enumerate}
 
 \section{Project Importance}
-The development of his project will highlight the importance of a network security in a local network. Network security measures should be taken into account in any network to avoid unwanted loss and data theft.
+
+The development of his project will highlight the importance of a network security in a local
+network. Network security measures should be taken into account in any network to avoid unwanted
+loss and data theft.
 
 \section{Report Organization}
 
-This report consists total of five chapters. The first chapter is project Introduction which contains problem background, project goal and objectives, project scope, and project importance. The first chapter helps to further define the main aspects of the low-cost router and firewall system development. The second chapter is Literature Review which consists of discussion and review of existing system and technology that available to the end user. The gathered data then analyzed and studied for the development of the system. The third chapter is project Methodology which consists the discussion of the methodology chosen for the project development by justifying and analyze the project requirement and objective. The fourth chapter is project Requirement Analysis and System Design which covers the use case and initial design of the proposed system. The fifth and last chapter is report Conclusion which discusses the achieved goals and objectives as result of the report writing, as well as the plan for the continuation of the project development and suggestions for future work. Project requirement use cases, activity diagram, and Gantt chart are included in the Appendices.
+This report consists total of five chapters. The first chapter is project Introduction which
+contains problem background, project goal and objectives, project scope, and project importance. The
+first chapter helps to further define the main aspects of the low-cost router and firewall system
+development. The second chapter is Literature Review which consists of discussion and review of
+existing system and technology that available to the end user. The gathered data then analyzed and
+studied for the development of the system. The third chapter is project Methodology which consists
+the discussion of the methodology chosen for the project development by justifying and analyze the
+project requirement and objective. The fourth chapter is project Requirement Analysis and System
+Design which covers the use case and initial design of the proposed system. The fifth and last
+chapter is report Conclusion which discusses the achieved goals and objectives as result of the
+report writing, as well as the plan for the continuation of the project development and suggestions
+for future work. Project requirement use cases, activity diagram, and Gantt chart are included in
+the Appendices.
 
 \end{document}
