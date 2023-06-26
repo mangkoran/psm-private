@@ -4,24 +4,24 @@
 
 \chapter{IMPLEMENTATION AND TESTING}
 
-Implementation and Testing chapter explains the system implementation which includes the
-configuration lines of the system that were carried out as continuation from the design and analysis
-phase. This phase is exceedingly critical for the project to achieve the fulfillment the system
-requirements.
+This chapter will explain the system implementation which includes the configuration code of the
+proposed system that were carried out as continuation from design and analysis stage. This stage is
+exceedingly critical for the project to achieve the fulfillment the system requirements. 
 
-Both black-box and white-box testing will be employed to ensure the functionality and system
-internals are operating correctly to meet the system requirements.
+Both black-box and white-box testing are employed to ensure the functionality and system internals
+are operating and behaving correctly to meet the system requirements.
 
 \section{Main System Functionality Code}
 
 In this section, the main functionality of the proposed system implementation will be explained.
-Code snippet of the relevant functionality is attached to help better visualization of the
-programming logic involved. The complete details of the code design will be documented in Appendix
-A.
+Code snippet of the relevant functionality is attached to help visualizing the programming logic
+involved.
 
 \subsection{Proxmox VE}
 
-Proxmox VE ...
+Proxmox VE initial setup involves manual installation due to Proxmox role as the foundation of the
+proposed system. Proxmox installation requires a USB drive which will be used to boot into Proxmox
+installation image.
 
 \subsection{OPNSense}
 
@@ -54,6 +54,14 @@ suspicious traffic pattern.
 Figure ... is the Ansible playbook and task to enable and configure Telegraf. Telegraf is ...
 
 \subsection{Pi-hole}
+
+% \begin{figure}[h]
+%    \tcbmintedinput{yaml}{../pve-ansible/pve/pihole.yml}
+%    \caption{Pi-hole Ansible playbook}
+% \end{figure}
+
+\codesnippet{yaml}{../pve-ansible/pve/pihole.yml}{Pi-hole Ansible playbook}
+
 
 Figure ... shows the Ansible playbook and task to bootstrap an Ubuntu LXC container that will host
 Pi-hole DNS server. The Ansible playbook will firstly check whether an LXC container with the name
@@ -101,8 +109,7 @@ Vector will filter the received syslog based on their appname. In this case, Vec
 segregate the syslog to filterlog, suricata, and pihole. Afterwards, Vector will do field remapping
 which sanitize the log to only includes useful information. For filterlog log, Vector will enrich
 the filterlog with GeoIP information, embedding additional geolocation data to the filterlog.
-Lastly, Vector will ship the processed log to Loki for log storage
-and query.
+Lastly, Vector will ship the processed log to Loki for log storage and query.
 
 \subsubsection{Loki}
 

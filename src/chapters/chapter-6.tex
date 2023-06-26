@@ -11,38 +11,46 @@ system. Suggestion for future improvement will be also discussed at the end of t
 \section{Achievement of Project Objectives}
 
 Chapter 1 identified the current issue regarding local area network vulnerability in home
-environement. As the guidance for this project, this chapter defined the objectives that should be
+environment. As the guidance for this project, this chapter defined the objectives that should be
 fulfilled and project scopes to limit the project development to the defined extent. The project
 report organization is also discussed to help with the report writing.
 
-Chapter 2 discussed regarding existing system analysis which focused on examining the current state of
-available systems. This phase helped to understand how the existing systems work and identify any
-noticable shortcomings or areas that require improvement.
+Chapter 2 discussed regarding existing system analysis which focused on examining the current state
+of available systems. This stage helped to understand how the existing systems work and identify any
+noticeable shortcomings or areas that require improvement.
 
 Chapter 3 reviewed the methodology to be used to develop the system. Following the decision of the
-methodology to be used, each of the selected methodolgy phase is identified and elaborated. System
-requirement which comprise of hardware and software requirement is also addressed, including the
-role of each requirement in the system development.
+methodology to be used, each of the selected methodology stage is identified and elaborated. This
+chapter also addressed system requirement which comprise of hardware and software requirement,
+including the role of each requirement in the system development.
 
-Chapter 4 ...
+Chapter 4 defined the proposed system requirement and design based on Chapter 1, Chapter 2, and
+Chapter 3 which includes both functional and non-functional requirement, project design, and
+interface design.
 
-Chapter 5 ...
+Chapter 5 explained the implementation of proposed system by presenting the main system
+configuration code. Furthermore, this chapter elaborated the testing stage that has been carried to
+check the quality and functionality of the proposed system that comprises of black-box and white-box
+testing.
 
-Chapter 6 ...
+Lastly, Chapter 6 summarized the achievements of preceding chapters, followed by proposed system
+advantages compared to existing solutions. This chapter is concluded with several suggestions that
+could be reviewed and included in future improvement of the proposed system.
+
 
 \section{System Advantages}
 
-This system is designed to be an improvement to existing systems. One of the advantages of this
-system is the utilization of hypervisor and virtualized environment as the system deployment model.
-This approach allows multiple guest virtual machines and containers to be deployed in a single
-hardware, which is a cost-saving measure for home use.
+The proposed system is designed to be an improvement to existing systems. One of the advantages of
+this system is the utilization of hypervisor and virtualised environment as the system
+infrastructure model. This approach allows multiple guest virtual machines and containers to be
+deployed in a single hardware, which is a cost-saving measure for home use.
 
 The components used were selected accordingly to maximize the functionality given with the limited
 resource. OPNSense as the primary firewall OS provides user with the ability to configure firewall
 rules and utilize Suricata intrusion detection system. The system also employs Pi-hole as DNS server
 with DNS sinkhole capability that could filter unwanted content such as advertisement and telemetry.
 With these capabilities, Pi-hole could help the system and network to reclaim resource such as
-computing power and bandwith from wasted usage. To monitor all of these subsystems metrics and
+computing power and bandwidth from wasted usage. To monitor all of these subsystems metrics and
 behaviors, an LXC container is deployed with the proposed monitoring stack. This monitoring stack
 will process metrics and logs of all deployed subsystems and curate it as a centralized dashboard
 with essential information.
@@ -54,16 +62,16 @@ system, there are several suggestions and improvements that could be applied to 
 on fulfilling the requirements further.
 
 Since the beginning of 2023, there are several new mini PC released with decent specification that
-could be a good alternative as hardware of this project. One of these devices is Topton i3 N305
-fanless mini PC. This mini PC utilizes low power Intel i3 N305 processor, and 8 cores 8 threads CPU
+could be a good alternative as hardware of this project. One of these devices is Topton i3 N305 fan
+less mini PC. This mini PC utilizes low power Intel i3 N305 processor, and 8 cores 8 threads CPU
 with only 15W TDP. The use of low power CPU could help on saving electric bill in long term usage.
 This mini PC also has 4 Intel i226-V 2.5G RJ45 ports, making it suitable to be used as networking
 appliance like this project. Furthermore, the small dimension of this mini PC allows for easy
 management and placement.
 
 The firewall usage could also be improved. OPNSense has multiple additional network security plugins
-that are available to be installed, such as ZenArmor and CrowdSec. These softwares have its own
-advantages and disadvantages depending on the use case. In future improvement, these softwares could
+that are available to be installed, such as ZenArmor and CrowdSec. These software have its own
+advantages and disadvantages depending on the use case. In future improvement, these software could
 be examined and compared to be used with this system as an alternative to the current
 implementation.
 
