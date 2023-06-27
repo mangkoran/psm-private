@@ -285,8 +285,7 @@
 
 \definecolor{bg}{gray}{0.95}
 
-\DeclareTCBInputListing{tcbmintedinput}{O{}m m!O{}}{%
-% \DeclareTCBInputListing[blend into=figures]{tcbmintedinput}{O{}m m m!O{}}{%
+\DeclareTCBInputListing[blend into=figures]{codesnippet}{O{}m m m m!O{}}{%
   breakable=true,
   listing engine=minted,
   listing file=#3,
@@ -301,7 +300,11 @@
     fontsize=\small,
     numbersep=8pt,
     #1},
-  % title=#4,
+  title={Figure \thefigure: #4},
+  detach title,
+  listing above comment,
+  comment=\centering\tcbtitletext\bigskip,
+  label={fig:#5},
   boxsep=0pt,
   left skip=0pt,
   right skip=0pt,
@@ -309,11 +312,14 @@
   right=0pt,
   top=3pt,
   bottom=3pt,
-  arc=5pt,
+  arc=0pt,
   leftrule=0pt,
   rightrule=0pt,
-  bottomrule=2pt,
-  toprule=2pt,
+  bottomrule=3pt,
+  toprule=3pt,
+  % enlarge bottom finally by=40pt,
+  % middle=20pt,
+  lower separated=false,
   colback=bg,
   colframe=orange!70,
   enhanced,
@@ -321,15 +327,8 @@
     \begin{tcbclipinterior}
     \fill[orange!20!white] (frame.south west) rectangle ([xshift=20pt]frame.north west);
     \end{tcbclipinterior}},
-  #4}
+  #6}
 
 \usepackage{newtxtext}
-\usepackage{xparse}
-
-\NewDocumentCommand \codesnippet {m m m}
-  {
-    \begin{figure}[h]
-      \tcbmintedinput{#1}{#2}
-      \caption{#3}
-    \end{figure}
-  }
+\usepackage{cleveref}
+\usepackage{multirow}
