@@ -4,8 +4,27 @@
 
 \chapter{INTRODUCTION}
 % Hack: gatau kenapa harus gini
-\pagenumbering{arabic}
-\setcounter{page}{1}
+\pagenumbering{arabic} \setcounter{page}{1}
+
+Information and communication technology, in the shape of physical and digital assets, are uniquely
+new kinds of personal property in this digital age. Home networks, every device connected to it,
+including personal computers and smart devices, and even the data stored inside previously mentioned
+devices should be treated carefully and protected under an adequate network security measure.
+Personal data and even devices access control are two of many private assets that individual might
+not want them to be accessed or even tampered by unknown outsiders. Internet Service Provider (ISP)
+on most of the time provide their home internet subscriber a basic router with Wi-Fi capability.
+However, the supplied router often has limited capabilities for securing the home network. Home
+users can always purchase third party router with more features; however, it will still cost them a
+fair amount of money.
+
+This project is aimed to provide proof-of-concept in developing home network security by utilizing
+enterprise-grade firewall deployed on virtualised environment on a personal computer (PC). The
+firewall is able to be configured according to the use case of the user, with additional advanced
+features and controls which can be found in enterprise firewall appliance. The usage of PC in this
+project is intended to make the firewall deployment flexible; any PC that fulfil the minimum
+requirements should be able to be used as the host of the firewall system.
+
+\section{Problem Background}
 
 For the past few years, people have seen the rapid growth of information and communication
 technology, both the development and application in their everyday life. Since the world becoming
@@ -25,53 +44,6 @@ shows and movies that requested by their owners using voice command. It is forec
 percent of households worldwide will become smart homes by 2025. This increase will be stimulated by
 smart lighting and controls and consumer electronics, with the latter contributing up to 40 percent
 of the total IoT products in smart home by 2021.
-
-Information and communication technology, in the shape of physical and digital assets, are uniquely
-new kinds of personal property in this digital age. Home networks, every device connected to it,
-including personal computers and smart devices, and even the data stored inside previously mentioned
-devices should be treated carefully and protected under an adequate network security measure.
-Personal data and even devices access control are two of many private assets that individual might
-not want them to be accessed or even tampered by unknown outsiders. Internet Service Provider (ISP)
-most of the time provide their home internet subscriber a basic router with Wi-Fi capability.
-However, the supplied router often has limited capabilities for securing the home network. Home
-users can always purchase third party router with more features; however, it will still cost them a
-fair amount of money.
-
-This project is aimed to provide proof-of-concept in developing home network security by utilizing
-enterprise-grade firewall deployed on virtualized environment on a personal computer (PC). The
-firewall is able to be configured according to the use case of the user, with additional advanced
-features and controls which can be found in enterprise firewall appliance. The usage of PC in this
-project is intended to make the firewall deployment flexible; any PC that fulfil the minimum
-requirements should be able to be used as the host of the firewall system.
-
-\section{Problem Background}
-
-According to IBM (2021), the global average total cost of a data breach soars to USD 4.24 million,
-increased from USD 3.86 million in 2020. This nearly 10\% increased cost by far the largest in the
-last seven years. Costs were notably lower for organizations which have more mature security
-posture, while higher for organizations that lagged in areas such as security AI and automation,
-zero trust and cloud security.
-
-One of the reasons why small business is particularly vulnerable to cyberattacks is inadequate or
-the absence of computer and network security. Business often struggles to achieve an effective
-security infrastructure because of the complexity of managing varying security solutions.
-
-One of the possible solutions to secure local area network is by using a hardware firewall. Hardware
-firewall (also known as network-based firewall) offers several benefits compared to software
-firewall. Hardware firewall runs on its own hardware, meaning that increases in traffic volume or
-security requirements do not impact the performance of protected machines. As hardware firewall is a
-single appliance that protects the entire network, any updates or configuration changes that are
-required can be applied once and will instantly apply to all devices protected by the firewall.
-Furthermore, hardware firewall enables centralized network monitoring and logging.
-
-Currently, the existing solution which is an enterprise-grade firewall has high operating cost if
-viewed from small business' perspective. In addition to purchasing the hardware, the user is
-required to have an active subscription so that the user can maximize the functionality of the
-firewall.
-
-This project is proposed to address the limitation mentioned above. This project tries to develop a
-proof-of-concept of a hardware firewall which has extensive functionality with an affordable price
-for small business to operate.
 
 Besides supporting human in their daily life routine, the widespread usage of information and
 communication technology in households also introduces another type of risks and threats towards ICT
@@ -108,51 +80,66 @@ Specifically, the objectives of this project are:
 
 \begin{enumerate}
 
-  \item To develop home network security infrastructure by employing network firewall system hosted
-    on a PC
+  % \item To develop home network security infrastructure by employing network firewall system hosted
+  %   on a PC
+  %
+  % \item To examine the effectiveness of the developed system to secure home network
+  %
+  % \item To examine the effectiveness of the developed system to secure home network
 
-  \item To examine the effectiveness of the developed system to secure home network
+  \item To study the problem which concern network security in home environment and existing
+    solution to the identified problem.
+
+  \item To study the advantage and disadvantage of existing solution to the identified network
+    security concern in home environment.
+
+  \item To propose solution which address the identified home environment network security concern
+    and possible improvement from existing solution.
+
+  \item To examine and test the functionality of the proposed system in addressing the identified
+    network security concern in home environment.
 
 \end{enumerate}
 
 \section{Scope}
 
-The scope for this project are specified below:
+Project scope provides a clear understanding of what needs to be achieved and what is out of the
+project's scope. It helps the project team and stakeholders to focus on the specific goals and
+deliverables, avoiding unnecessary work or distractions. For this project, the scope are specified
+below:
 
 \begin{enumerate}
 
-  \item The project will only cover the development of virtualized firewall and monitoring
-    infrasturucture in a personal computer. Any additional feature or issue that might be found in
+  \item The project will only cover the development of virtualised firewall and monitoring
+    infrastructure in a personal computer. Any additional feature or issue that might be found in
     future development phase related to each software or subsystem will be referred to its
     respective repository.
 
-  % \item The exact hardware specification is not explicitly defined as users might opt for different
-  %   specification depending on their budget. The project will only state the minimum hardware
-  %   specification for optimal use based on the user requirements. Any performance-based metrics
-  %   could be measured; however, it will not be compared
+    \item The exact hardware specification is not explicitly defined as users might choose for
+      different specification depending on how much they are willing to spend. The project will only
+      state the minimum hardware specification for optimal use based on the deployed subsystems
+      requirement. Any performance-based metrics will not be compared.
   
-  \item 
-
 \end{enumerate}
 
 \section{Project Importance}
 
 The development of his project will highlight the importance of a network security in a local
-network. Network security measures should be taken into account in any network to avoid unwanted
-loss and data theft.
+network in home environment. Network security measures should be taken into account in any network
+where there is user inside the network to avoid unwanted loss and data theft.
 
 \section{Report Organization}
 
 This project report is consisted of five chapters. The first chapter is project Introduction which
 contains problem background, project goal and objectives, project scope, and project importance. The
-first chapter will help to further define the main aspects of the low-cost router and firewall system
-development. The second chapter is Literature Review which consists of discussion and review of
-existing system and technology that available to the end user. The gathered data then analyzed and
-studied for the development of the system. The third chapter is project Methodology which consists
-the discussion of the methodology chosen for the project development by justifying and analyze the
-project requirement and objective. The fourth chapter is project Requirement Analysis and System
-Design which covers the use case and initial design of the proposed system. The fifth and last
-chapter is report Conclusion which discusses the achieved goals and objectives as result of the
+first chapter will help to further define the main aspects of the low-cost router and firewall
+system development. The second chapter is Literature Review which consists of discussion and review
+of existing system and technology that available to the end user. The gathered data then analyzed
+and studied for the development of the system. The third chapter is project Methodology which
+consists the discussion of the methodology chosen for the project development by justifying and
+analyze the project requirement and objective. The fourth chapter is project Requirement Analysis
+and System Design which covers the use case and initial design of the proposed system. The fifth and
+last chapter is report Conclusion which discusses the achieved goals and objectives as result of the
 report writing, as well as the plan for the continuation of the project development and suggestions
 for future work. Project requirement use cases, activity diagram, and Gantt chart are included in
 the Appendices.

@@ -31,9 +31,9 @@ There are five phases which comprises the Waterfall methodology.
 
 \subsection{Requirements Analysis and Definition}
 
-The Waterfall project methodology starts by defining the project requirements. The system
-services, constraints, and objectives are established with the system users. They are then defined
-in detail and serve as a system specification.
+The Waterfall project methodology starts by defining the project requirements. The system services,
+constraints, and objectives are established with the system users. They are then defined in detail
+and serve as a system specification.
 
 For this system development project, this phase will discuss several network security concerns that
 exist in home network environment. After the issues and concerns have been identified, the possible
@@ -42,39 +42,35 @@ be used as the reference for considerations and justifications in later phases.
 
 \subsection{System Design}
 
-Following the requirements analysis is the system and software design. The
-system design process defines the required condition to either software or physical
-hardware systems. It determines the entire system architecture in general view.
+Following the requirements analysis is the system and software design. The system design process
+defines the required condition to either software or physical hardware systems. It determines the
+entire system architecture in general view.
 
-In this phase, the overall firewall system design will be defined based on the
-result of requirement analysis. Both of the hardware and software implementation will
-be discussed and planned to be applied in later system development phases
+In this phase, the overall firewall system design will be defined based on the result of requirement
+analysis. Both of the hardware and software implementation will be discussed and planned to be
+applied in later system development phases
 
 \subsection{Implementation}
 
-The implementation is where the design is accomplished as a set of solution or
-solution units. This also includes verification that every implemented unit fulfill its
-requirements.
+The implementation is where the design is accomplished as a set of solution or solution units. This
+also includes verification that every implemented unit fulfill its requirements.
 
-When the system development project has reached the Implementation phase,
-any software and hardware solutions based on the outcome of Requirement Analysis
-and System Design phases will be installed and configured. Initially, the system
-hardware will be assembled in accordance to the hardware available or selected by the
-user. After the hardware have been assembled, the software can start to be installed
-and configured based on the requirements
+When the system development project has reached the Implementation phase, any software and hardware
+solutions based on the outcome of Requirement Analysis and System Design phases will be installed
+and configured. Initially, the system hardware will be assembled in accordance to the hardware
+available or selected by the user. After the hardware have been assembled, the software can start to
+be installed and configured based on the requirements
 
 
 \subsection{Integration and System Testing}
 
-In the integration and system testing phase, the particular solution units or
-solutions are implemented and examined as an entire system to guarantee that the
-project requirements have been fulfilled. After the system has been thoroughly tested,
-it will be released to client.
+In the integration and system testing phase, the particular solution units or solutions are
+implemented and examined as an entire system to guarantee that the project requirements have been
+fulfilled. After the system has been thoroughly tested, it will be released to client.
 
-In Integration and System Testing phase, the developed system will be tested
-based on the defined testing methodology. This phase will ensure that both the
-hardware and software aspect of the system is running properly and provide security
-to the home network according to the system design.
+In Integration and System Testing phase, the developed system will be tested based on the defined
+testing methodology. This phase will ensure that both the hardware and software aspect of the system
+is running properly and provide security to the home network according to the system design.
 
 
 \subsection{Operation and Maintenance}
@@ -83,33 +79,30 @@ After the initial system development, configuration, and testing is done and pas
 be utilized based on the use case. The maintenance stage includes amending the system if in the
 later stage there are unintended behaviors that were not found in previous system development phase.
 
-Maintenance involves correcting errors that were not discovered in earlier
-stages of the life cycle, improving the implementation of system units, and enhancing
-the system services as new requirements are discovered.
-After the device is deployed and put into use in actual home network, it will be
-monitored to analyze its usage and effectiveness in providing network security inside
-the household.
+Maintenance involves correcting errors that were not discovered in earlier stages of the life cycle,
+improving the implementation of system units, and enhancing the system services as new requirements
+are discovered. After the device is deployed and put into use in actual home network, it will be
+monitored to analyze its usage and effectiveness in providing network security inside the household.
 
 \section{Technology Used}
 
-To achieve the project objectives defined in previous chapter, the following
-technology will be used:
+To achieve the project objectives defined in previous chapter, the following technology will be
+used:
 
 \subsection{Proxmox VE}
 
-Proxmox VE is a type 1 hypervisor which serves as server management
-platform for enterprise virtualization. It operates directly on a bare-metal system by
-utilizing the Linux Containers (LXC) and KVM hypervisor as well as software-defined
-networking and storage, all of that implemented on a single platform.
+Proxmox VE is a type 1 hypervisor which serves as server management platform for enterprise
+virtualization. It operates directly on a bare-metal system by utilizing the Linux Containers (LXC)
+and KVM hypervisor as well as software-defined networking and storage, all of that implemented on a
+single platform.
 
 Proxmox will be used as the appliance's base system. Afterwards, the firewall OS and Pi-hole
 container will be deployed on top of it.
 
 \subsection{OPNSense}
 
-OPNsense is an open-source firewall and routing platform based on FreeBSD.
-A few of its features including traffic shaping, forward caching proxy, OpenVPN client
-and intrusion detection system.
+OPNsense is an open-source firewall and routing platform based on FreeBSD. A few of its features
+including traffic shaping, forward caching proxy, OpenVPN client and intrusion detection system.
 
 OPNsense will be used as the appliance's main OS. It will provide the network- based firewall and
 network routing for the local network. A necessary configuration is required to fulfill the
@@ -117,73 +110,67 @@ project's objective.
 
 \subsection{LXC}
 
-LXC is one of type 1 hypervisor technology used to run multiple separate
-Linux system in the form of container on a control host which utilize single Linux
-kernel.
+LXC is one of type 1 hypervisor technology used to run multiple separate Linux system in the form of
+container on a control host which utilize single Linux kernel.
 
-LXC is selected to be used for the project as it has minimal overhead compared
-to other deployment method. Instead of creating an entire virtual machine, LXC
-achieves its virtualization by utilizing virtual environment which has separate network
-and process space.
+LXC is selected to be used for the project as it has minimal overhead compared to other deployment
+method. Instead of creating an entire virtual machine, LXC achieves its virtualization by utilizing
+virtual environment which has separate network and process space.
 
-In the system development project, LXC will be use for the deployment of Pi-
-hole application. Instead of virtualizing the entire operating system only for Pi-hole,
-LXC can be utilized to provide the necessary virtualization with noticably lower
-overhead.
+In the system development project, LXC will be use for the deployment of Pi- hole application.
+Instead of virtualizing the entire operating system only for Pi-hole, LXC can be utilized to provide
+the necessary virtualization with noticably lower overhead.
 
 \subsection{Pi-hole}
 
-Pi-hole provides a DNS sinkhole functionality which protects devices
-connected to the local network from unwanted content, such as advertisement and
-internet tracker, without being required to install any client-side software.
+Pi-hole provides a DNS sinkhole functionality which protects devices connected to the local network
+from unwanted content, such as advertisement and internet tracker, without being required to install
+any client-side software.
 
-In this project, Pi-hole will be implemented in the system as an advertisement
-and internet tracker blocker. Any DNS query will be sent to Pi-hole and Pi-hole will
-determine if the DNS queries should be forwarded or allowed or it should be blocked
-based on the applied rules.
+In this project, Pi-hole will be implemented in the system as an advertisement and internet tracker
+blocker. Any DNS query will be sent to Pi-hole and Pi-hole will determine if the DNS queries should
+be forwarded or allowed or it should be blocked based on the applied rules.
 
 \section{System Requirement Analysis}
 
-To ensure that the developed appliance met the project objectives and deliver
-its functionality as optimal as possible, there are several requirements that are required.
+To ensure that the developed appliance met the project objectives and deliver its functionality as
+optimal as possible, there are several requirements that are required.
 
 \subsection{Hardware Requirement}
 
-The main objective of this project is to develop a low-cost hardware firewall
-by utilizing an old PC. As PC is becoming more accessible to every person, it is chosen
-as the base hardware which the firewall and additional application will be deployed.
+The main objective of this project is to develop a low-cost hardware firewall by utilizing an old
+PC. As PC is becoming more accessible to every person, it is chosen as the base hardware which the
+firewall and additional application will be deployed.
 
 However, to make sure that the appliance will serve its purpose optimally, several specific
 requirements are needed.
 
-The main objective of this project is to configure a network-based firewall
-hosted on a personal computer (PC). As this project make use of Proxmox and LXC
-for the virtualization, a decent PC with multi-cores CPU and high-speed disk are
-required as to make the system responsive and capable to fulfill tasks
+The main objective of this project is to configure a network-based firewall hosted on a personal
+computer (PC). As this project make use of Proxmox and LXC for the virtualization, a decent PC with
+multi-cores CPU and high-speed disk are required as to make the system responsive and capable to
+fulfill tasks
 
 \subsection{Software Requirement}
 
-For accessing the system through command line interface (CLI), a PC with
-secure shell (ssh) capability is required. In Linux environment, the openssh package
-requires the following dependencies:
+For accessing the system through command line interface (CLI), a PC with secure shell (ssh)
+capability is required. In Linux environment, the openssh package requires the following
+dependencies:
 
-To access the system through web interface, a modern web browser is required.
-This includes any recent release of Firefox, Chromium-based browsers, and Safari
+To access the system through web interface, a modern web browser is required. This includes any
+recent release of Firefox, Chromium-based browsers, and Safari
 
 \section{Summary}
 
-This chapter discussed the detailed steps for the implementation or
-developments of the proposed system. Technologies and system requirement which
-covers both hardware and software requirements are defined further. Clearly defining
-the methodology and system requirements will help to ensure the project is completed
-and its objectives and deliverables are achieved within the allocated period. The
-system requirement, both software and hardware, also discussed for the purpose of
-keeping the system running optimally. This chapter discussed the detailed steps for the
-implementation or developments of the proposed system. Technologies and system
-requirement which covers both hardware and software requirements are defined
-further. Clearly defining the methodology and system requirements will help to ensure
-the project is completed and its objectives and deliverables are achieved within the
-allocated period. The system requirement, both software and hardware, also discussed
-for the purpose of keeping the system running optimally
+This chapter discussed the detailed steps for the implementation or developments of the proposed
+system. Technologies and system requirement which covers both hardware and software requirements are
+defined further. Clearly defining the methodology and system requirements will help to ensure the
+project is completed and its objectives and deliverable are achieved within the allocated period.
+The system requirement, both software and hardware, also discussed for the purpose of keeping the
+system running optimally. This chapter discussed the detailed steps for the implementation or
+developments of the proposed system. Technologies and system requirement which covers both hardware
+and software requirements are defined further. Clearly defining the methodology and system
+requirements will help to ensure the project is completed and its objectives and deliverable are
+achieved within the allocated period. The system requirement, both software and hardware, also
+discussed for the purpose of keeping the system running optimally.
 
 \end{document}
