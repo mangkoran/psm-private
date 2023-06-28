@@ -7,3 +7,4 @@ name = "default"
 type = "pdf"
 preamble = ""
 postamble = ""
+shell_escape = true
