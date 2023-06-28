@@ -22,7 +22,7 @@
 % \usepackage{newtxtext}
 
 % Judul bahasa Indonesia
-\usepackage[bahasa]{babel}
+% \usepackage[bahasa]{babel}
 
 % Spacing 1.5
 \usepackage{setspace}
@@ -59,14 +59,14 @@
 
 % Translate bibliography strings ke bahasa indonesia
 %   (karena 'bahasa' belum di-support)
-\DefineBibliographyStrings{english}{%
-	bibliography = {Daftar Pustaka},
-	references = {Referensi},
-	and = {dan},
-	techreport = {Dok. teknis},
-	phdthesis = {Disertasi doktoral\adddot},
-	andothers = {dkk\adddot}
-}
+% \DefineBibliographyStrings{english}{%
+% 	bibliography = {Daftar Pustaka},
+% 	references = {Referensi},
+% 	and = {dan},
+% 	techreport = {Dok. teknis},
+% 	phdthesis = {Disertasi doktoral\adddot},
+% 	andothers = {dkk\adddot}
+% }
 
 % Field berikut tidak ditulis di daftar pustaka
 \AtEveryBibitem{\clearfield{issn}}
@@ -300,7 +300,7 @@
     fontsize=\small,
     numbersep=8pt,
     #1},
-  title={Figure \thefigure: #4},
+  title={Figure \thefigure. #4},
   detach title,
   listing above comment,
   comment=\centering\tcbtitletext\bigskip,
