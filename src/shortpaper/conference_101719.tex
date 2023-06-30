@@ -1,33 +1,44 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
-\usepackage{cite}
+% \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\usepackage{tabularray}
+\usepackage{cleveref}
+\UseTblrLibrary{varwidth}
+\usepackage{float}
+\usepackage[backend=bibtex,
+	bibstyle=numeric,
+	citestyle=numeric,
+	sorting=nyt,
+	url=false,
+	maxcitenames=2,
+	maxnames=2,
+	% dashed=false,
+	giveninits=true]{biblatex}
+\bibliography{references}
+% \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Conference Paper Title*\\
-{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
-should not be used}
-\thanks{Identify applicable funding agency here. If none, delete this.}
-}
+\title{SECURING HOME NETWORK BY UTILIZING FREE AND OPEN SOURCE ENTERPRISE-GRADE NETWORK FIREWALL
+HOSTED ON PERSONAL COMPUTER}
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\author{\IEEEauthorblockN{Afiq Nazrie Rabbani}
+\IEEEauthorblockA{\textit{Faculty of Computing} \\
+\textit{University Teknologi Malaysia}\\
+81310 Johor, Malaysia \\
+nazrie@graduate.utm.my}
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{Mohd Fo'ad Rohani}
+\IEEEauthorblockA{\textit{Faculty of Computing} \\
+\textit{University Teknologi Malaysia}\\
+81310 Johor, Malaysia \\
+foad@utm.my}
 }
 
 \maketitle
@@ -50,7 +61,7 @@ email address or ORCID}
 \end{abstract}
 
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert
+network security, firewall, virtualised, monitoring
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -90,6 +101,159 @@ requirements should be able to be used as the host of the firewall system.
 
 \section{Literature Review}
 
+This section will discuss several concepts and technologies which will be used in the proposed
+system. There will be discussion regarding computer security concepts according to several
+standards, followed by explanation of different types of firewalls and virtualization technologies,
+brief explanation of Kubernetes system, and concluded with summary of the chapter.
+
+\subsection{Computer Security}
+
+According to \cite{Paulsen_Byers_2019}, the term computer security can be described as a collection
+of actions and rules which ensure confidentiality, integrity, and availability of a certain
+information system property. This includes the physical hardware, underlying software, embedded
+firmware, and data that is transmitted, saved, and processed.
+
+Derived from above definition, there are three key objectives which are the core of computer
+security:
+
+\subsubsection{Confidentiality}
+
+The concept of Confidentiality covers the following two corresponding concepts:
+
+\begin{itemize}
+
+  \item Data confidentiality: Assures that private or confidential information is not made
+    accessible or shared to unauthorized users.
+
+  \item Privacy: Assures that personals manage or influence the collection and storage of
+    information related to them and by whom and to whom that information may be shared.
+
+\end{itemize}
+
+\subsubsection{Integrity}
+
+The concept of Integrity covers the following two corresponding concepts:
+
+\begin{itemize}
+
+  \item Data integrity: Assures that information and programs are communicated through a particular
+    and authorized method.
+
+  \item System integrity: Assures that a system serves its purpose in an unimpaired form, free from
+    deliberate or unintended unauthorized manipulation of the system.
+
+\end{itemize}
+
+\subsubsection{Availability}
+
+Assures that systems work properly and service is available authorized users.
+
+
+\subsection{Threats and Attacks}
+
+RFC 4949 defines four types of threat impacts and enumerates the attack types which lead to each
+impact:
+
+\subsubsection{Unauthorized disclosure}
+
+RFC 4949 defines unauthorized disclosure as a situation which an individual acquires access to
+certain data albeit the individual is not legitimate. There are four threat actions that could lead
+to unauthorized disclosure:
+
+\begin{itemize}
+
+  \item Exposure: An unauthorized individual is able to directly access to critical data.
+
+  \item Interception: An unauthorized individual interrupts critical data transmitted between
+    legitimate origins and destinations.
+
+  \item Inference: A condition where an unauthorized individual is able to indirectly accesses
+    critical data by understanding from the attributes or results of communications.
+
+  \item Intrusion: A condition where an unauthorized individual gains access to critical data by
+    evading or beating the security guard of a system.
+
+\end{itemize}
+
+\subsubsection{Deception}
+
+Deception is a condition which can lead in an authorized individual acquiring counterfeit data and
+assuming it to be the actual data. There are three threat actions that could lead to deception:
+
+\begin{itemize}
+
+  \item Masquerade: An unauthorized individual acquires access to a system or executes a harmful
+    action by disguising as an authorized individual.
+
+  \item Falsification: A condition where an authorized individual is deceived by counterfeit data.
+
+  \item Repudiation: A condition where an individual tricks another by falsely denying obligation
+    for a behavior.
+
+\end{itemize}
+
+\subsubsection{Disruption}
+
+A condition can be categorised as a disruption when there is action that interrupts or prevents the
+intended functionality of system services and utilities. There are three threat actions that could
+lead to disruption:
+
+\begin{itemize}
+
+  \item Incapacitation: Interrupts system operation by incapacitating a component of the system.
+
+  \item Corruption: Adversely mutates system operation by harmfully altering system data or
+    functions.
+
+  \item Obstruction: A condition where system operation is being impeded by a threat which result in
+    interruption of system services.
+
+\end{itemize}
+
+\subsubsection{Usurpation}
+
+Usurpation is a condition where an unauthorized individual takeover the control system services or
+functions. There are two threat actions that could lead to usurpation:
+
+\begin{itemize}
+
+  \item Misappropriation: A condition where an individual presume unauthorized control of physical
+    or logical resource of a certain system.
+
+  \item Misuse: A condition which may lead a system component to execute a function or behavior that
+    is harmful to the security of the system.
+
+\end{itemize}
+
+\subsection{Existing System Analysis}
+
+To study and analyze the capabilities and shortcomings of currently existing firewall systems, two
+devices are chosen to be inspected: one home router device and one enterprise-grade firewall device.
+The first device chosen is Kaon AR2140, the router that provided by Maxis for its Maxis Fiber
+subscriber. The Kaon AR2140 main features are support for Wi-Fi 6 and EasyMesh certification.
+
+For the enterprise firewall device, Deciso DEC675 is chosen to be compared. The DEC675 is a desktop
+security appliance sold by Deciso, the parent company of OPNsense. While it is commercialized, it
+utilizes the open-source OPNsense firewall operating system at its core. The only addition is
+limited Business Edition license, which includes access to commercial firmware repository and
+professional support. Since it uses OPNsense, it offers the same security and networking features
+that offered by OPNsense.
+
+\begin{table}[H]
+  \caption{COMPARISON OF EXISTING SYSTEMS}
+  \label{table:existing_system_comparison}
+  \begin{tblr}{hlines,colspec={|X[c]|X[c]|X[c]|X[c]|}}
+    Feature & AR2140 & DEC675 & Proposed System \\
+    Firewall rule & - & \checkmark & \checkmark \\
+    IDS/IPS & - & \checkmark & \checkmark \\
+    Custom DNS Blocklist & - & \checkmark & \checkmark \\
+    Monitoring Dashboard & - & \checkmark & \checkmark \\
+  \end{tblr}
+\end{table}
+
+\Cref{table:existing_system_comparison} shows the comparison between Kaon AR2140, Deciso DEC675, and
+the proposed system.
+
 \section{System Development Methodology}
 
 Waterfall model is selected as the proposed system will mainly serve its function with minimal
@@ -106,6 +270,7 @@ phases. The Waterfall model initiated with Requirement Gathering and Analysis, f
 Design, Implementation, Integration and System Testing, and ended with Deployment and Maintenance.
 
 \begin{enumerate}
+
   \item Requirement Gathering and Analysis: The Waterfall project methodology is started by
     gathering the project requirements and analyse the collected facts. The system services,
     constraints, and objectives are established with the system users. They are then defined in
@@ -136,213 +301,178 @@ Design, Implementation, Integration and System Testing, and ended with Deploymen
 
 \subsection{Technology Used}
 
+To achieve the project objectives defined in previous chapter, the following technology will be
+used. The usage of the selected technology explained in this section is based on their capacity to
+fulfill the required tasks.
+
+\begin{enumerate}
+
+  \item Proxmox VE: Proxmox VE is a type 1 hypervisor which serves as server management platform for
+    enterprise virtualization. Proxmox will be used as the base foundation of the proposed system.
+    It allows other subsystems such as OPNsense virtual machine and containers for Pi-hole and the
+    monitoring stack to be installed in one PC.
+
+  \item OPNsense: OPNsense is an open-source firewall and routing platform based on FreeBSD. A few
+    of its features including traffic shaping, forward caching proxy, OpenVPN client and intrusion
+    detection system. OPNsense will be used as primary firewall OS of the proposed system. It will
+    provide the network-based firewall and network routing for the local network. 
+
+  \item Pi-hole: Pi-hole is a DNS server that has DNS sinkhole feature which protects devices
+    connected to the local network from unwanted content, such as advertisement and internet
+    tracker, without being required to install any client-side software. Pi-hole will be implemented
+    in the proposed system as an advertisement and internet tracker blocker.
+
+  \item Vector: Vector is a data processing pipeline that allows logs and metrics collection,
+    transformation, and routing. Vector will be used in the proposed system to filter and sanitise
+    syslogs that will be received from other VM and containers. Afterwards, the processed logs will
+    be shipped to Loki for log storage.
+
+  \item Grafana Loki: Loki is a log aggregation and storage system which took inspiration from
+    Prometheus. Loki allows for efficient indexing of log data as in Loki index is copmrised from
+    labels without the original log message. Loki will be used to store the syslog data which is
+    forwarded by OPNsense and Pi-hole that consists of firewall action, Suricata IDS, and DNS block
+    log.
+
+  \item Prometheus: Prometheus is a system monitoring and alerting toolkit which retrieves and
+    stores metrics along with the timestamp at when it was reported and optional labels. Prometheus
+    will be used to scrape and store the metrics of OPNsense VM and Pi-hole container. This metric
+    will be used by Grafana to create centralised monitoring dashboard.
+
+  \item Grafana: Grafana is an open-source data visualization and monitoring tool used to create
+    interactive and customizable dashboards for analyzing and monitoring various data sources.
+    Grafana will be used to create centralised monitoring dashboard. This includes VM and container
+    system metrics, network access log, firewall action log, and DNS block log. This centralised
+    monitoring dashboard allows system administrator monitors the proposed system simpler and
+    easier.
+
+\end{enumerate}
+
 \section{Requirement Analysis and Design}
+
+This section will examine the proposed project requirements and system design. Identifying project
+requirements and defining the proposed system design are mandatory to successfully deliver the
+project objectives and functionalities.
+
+\subsection{Requirement Analysis}
+
+This section will outline the specific features, capabilities, and behavior that the software system
+should possess in order to fulfill its intended purpose and meet the needs of its users. The
+functional requirements describe what the system should do, rather than how it should be
+implemented.
+
+\begin{table}[H]
+  \caption{LIST OF FUNCTIONAL REQUIREMENTS}
+  \label{table:functional_req}
+  \begin{tblr}{hlines,colspec={|l|X[l,m]|}}
+    \SetCell[c=1]{c} ID & \SetCell[c=1]{c} Description \\
+    FR01 & User shall be able to access another device which exists in the local network \\
+    FR02 & User shall be able to access the Internet \\
+    FR03 & Administrator shall be able to configure the system using the proposed Ansible code \\
+    FR04 & Administrator shall be able to monitor the system metrics and logs \\
+  \end{tblr}
+\end{table}
+
+\begin{table}[H]
+  \caption{LIST OF NON-FUNCTIONAL REQUIREMENTS}
+  \label{table:nonfunctional_req}
+  \begin{tblr}{hlines,colspec={|l|X[l,m]|}}
+    \SetCell[c=1]{c} ID & \SetCell[c=1]{c} Description \\
+    NFR01 & The system shall be accessible for 24 hours \\
+    NFR02 & The system shall have low error rate \\
+    NFR03 & The system shall be accessible only by system Administrator \\
+  \end{tblr}
+\end{table}
+
+\subsection{Design}
+
+\Cref{fig:project_design} shows the proposed system design infrastructure. The system will utilize
+Proxmox VE which act as server management platform as its base. Proxmox VE provides KVM hypervisor,
+storage and network virtualization for the system. The Proxmox VE will manage virtualised OPNsense
+host and local Kubernetes cluster in parallel. The OPNsense host will provide the main network
+firewall and routing capabilities. The Pi-hole will be deployed on an LXC container.
+
+\begin{figure}[H]
+  \includegraphics[width=\columnwidth]{../assets/project_design.drawio.png}
+  \caption{PROPOSED SYSTEM INFRASTRUCTURE DESIGN}
+  \label{fig:project_design}
+\end{figure}
 
 \section{Testing}
 
-\section{Conclusion}
+This section will explain the system implementation which includes the configuration code of the
+proposed system that were carried out as continuation from design and analysis stage. This stage is
+exceedingly critical for the project to achieve the fulfillment the system requirements. 
 
-\section{Prepare Your Paper Before Styling}
-Before you begin to format your paper, first write and save the content as a 
-separate text file. Complete all content and organizational editing before 
-formatting. Please note sections \ref{AA}--\ref{SCM} below for more information on 
-proofreading, spelling and grammar.
+Both black-box and white-box testing are utilised to ensure system internals are operating and
+behaving correctly to meet the system requirements.
 
-Keep your text and graphic files separate until after the text has been 
-formatted and styled. Do not number text heads---{\LaTeX} will do that 
-for you.
-
-\subsection{Abbreviations and Acronyms}\label{AA}
-Define abbreviations and acronyms the first time they are used in the text, 
-even after they have been defined in the abstract. Abbreviations such as 
-IEEE, SI, MKS, CGS, ac, dc, and rms do not have to be defined. Do not use 
-abbreviations in the title or heads unless they are unavoidable.
-
-\subsection{Units}
-\begin{itemize}
-\item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
-\item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
-\item Do not mix complete spellings and abbreviations of units: ``Wb/m\textsuperscript{2}'' or ``webers per square meter'', not ``webers/m\textsuperscript{2}''. Spell out units when they appear in text: ``. . . a few henries'', not ``. . . a few H''.
-\item Use a zero before decimal points: ``0.25'', not ``.25''. Use ``cm\textsuperscript{3}'', not ``cc''.)
-\end{itemize}
-
-\subsection{Equations}
-Number equations consecutively. To make your 
-equations more compact, you may use the solidus (~/~), the exp function, or 
-appropriate exponents. Italicize Roman symbols for quantities and variables, 
-but not Greek symbols. Use a long dash rather than a hyphen for a minus 
-sign. Punctuate equations with commas or periods when they are part of a 
-sentence, as in:
-\begin{equation}
-a+b=\gamma\label{eq}
-\end{equation}
-
-Be sure that the 
-symbols in your equation have been defined before or immediately following 
-the equation. Use ``\eqref{eq}'', not ``Eq.~\eqref{eq}'' or ``equation \eqref{eq}'', except at 
-the beginning of a sentence: ``Equation \eqref{eq} is . . .''
-
-\subsection{\LaTeX-Specific Advice}
-
-Please use ``soft'' (e.g., \verb|\eqref{Eq}|) cross references instead
-of ``hard'' references (e.g., \verb|(1)|). That will make it possible
-to combine sections, add equations, or change the order of figures or
-citations without having to go through the file line by line.
-
-Please don't use the \verb|{eqnarray}| equation environment. Use
-\verb|{align}| or \verb|{IEEEeqnarray}| instead. The \verb|{eqnarray}|
-environment leaves unsightly spaces around relation symbols.
-
-Please note that the \verb|{subequations}| environment in {\LaTeX}
-will increment the main equation counter even when there are no
-equation numbers displayed. If you forget that, you might write an
-article in which the equation numbers skip from (17) to (20), causing
-the copy editors to wonder if you've discovered a new method of
-counting.
-
-{\BibTeX} does not work by magic. It doesn't get the bibliographic
-data from thin air but from .bib files. If you use {\BibTeX} to produce a
-bibliography you must send the .bib files. 
-
-{\LaTeX} can't read your mind. If you assign the same label to a
-subsubsection and a table, you might find that Table I has been cross
-referenced as Table IV-B3. 
-
-{\LaTeX} does not have precognitive abilities. If you put a
-\verb|\label| command before the command that updates the counter it's
-supposed to be using, the label will pick up the last counter to be
-cross referenced instead. In particular, a \verb|\label| command
-should not go before the caption of a figure or a table.
-
-Do not use \verb|\nonumber| inside the \verb|{array}| environment. It
-will not stop equation numbers inside \verb|{array}| (there won't be
-any anyway) and it might stop a wanted equation number in the
-surrounding equation.
-
-\subsection{Some Common Mistakes}\label{SCM}
-\begin{itemize}
-\item The word ``data'' is plural, not singular.
-\item The subscript for the permeability of vacuum $\mu_{0}$, and other common scientific constants, is zero with subscript formatting, not a lowercase letter ``o''.
-\item In American English, commas, semicolons, periods, question and exclamation marks are located within quotation marks only when a complete thought or name is cited, such as a title or full quotation. When quotation marks are used, instead of a bold or italic typeface, to highlight a word or phrase, punctuation should appear outside of the quotation marks. A parenthetical phrase or statement at the end of a sentence is punctuated outside of the closing parenthesis (like this). (A parenthetical sentence is punctuated within the parentheses.)
-\item A graph within a graph is an ``inset'', not an ``insert''. The word alternatively is preferred to the word ``alternately'' (unless you really mean something that alternates).
-\item Do not use the word ``essentially'' to mean ``approximately'' or ``effectively''.
-\item In your paper title, if the words ``that uses'' can accurately replace the word ``using'', capitalize the ``u''; if not, keep using lower-cased.
-\item Be aware of the different meanings of the homophones ``affect'' and ``effect'', ``complement'' and ``compliment'', ``discreet'' and ``discrete'', ``principal'' and ``principle''.
-\item Do not confuse ``imply'' and ``infer''.
-\item The prefix ``non'' is not a word; it should be joined to the word it modifies, usually without a hyphen.
-\item There is no period after the ``et'' in the Latin abbreviation ``et al.''.
-\item The abbreviation ``i.e.'' means ``that is'', and the abbreviation ``e.g.'' means ``for example''.
-\end{itemize}
-An excellent style manual for science writers is \cite{b7}.
-
-\subsection{Authors and Affiliations}
-\textbf{The class file is designed for, but not limited to, six authors.} A 
-minimum of one author is required for all conference articles. Author names 
-should be listed starting from left to right and then moving down to the 
-next line. This is the author sequence that will be used in future citations 
-and by indexing services. Names should not be listed in columns nor group by 
-affiliation. Please keep your affiliations as succinct as possible (for 
-example, do not differentiate among departments of the same organization).
-
-\subsection{Identify the Headings}
-Headings, or heads, are organizational devices that guide the reader through 
-your paper. There are two types: component heads and text heads.
-
-Component heads identify the different components of your paper and are not 
-topically subordinate to each other. Examples include Acknowledgments and 
-References and, for these, the correct style to use is ``Heading 5''. Use 
-``figure caption'' for your Figure captions, and ``table head'' for your 
-table title. Run-in heads, such as ``Abstract'', will require you to apply a 
-style (in this case, italic) in addition to the style provided by the drop 
-down menu to differentiate the head from the text.
-
-Text heads organize the topics on a relational, hierarchical basis. For 
-example, the paper title is the primary text head because all subsequent 
-material relates and elaborates on this one topic. If there are two or more 
-sub-topics, the next level head (uppercase Roman numerals) should be used 
-and, conversely, if there are not at least two sub-topics, then no subheads 
-should be introduced.
-
-\subsection{Figures and Tables}
-\paragraph{Positioning Figures and Tables} Place figures and tables at the top and 
-bottom of columns. Avoid placing them in the middle of columns. Large 
-figures and tables may span across both columns. Figure captions should be 
-below the figures; table heads should appear above the tables. Insert 
-figures and tables after they are cited in the text. Use the abbreviation 
-``Fig.~\ref{fig}'', even at the beginning of a sentence.
-
-\begin{table}[htbp]
-\caption{Table Type Styles}
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
-\cline{2-4} 
-\textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
-\hline
-copy& More table copy$^{\mathrm{a}}$& &  \\
-\hline
-\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
-\end{tabular}
-\label{tab1}
-\end{center}
+\begin{table}[H]
+  \caption{RESULT OF BLACK-BOX TESTING}
+  \label{table:black_box}
+  \begin{tblr}{hlines,colspec={|l|X[l,m]|c|}}
+    \SetCell[c=1]{c} Test Case & \SetCell[c=1]{c} Description & \SetCell[c=1]{c} Result\\
+    TC01 & Create opnsense1 VM & PASS \\
+    TC02 & Create pihole1 container & PASS \\
+    TC03 & Create monitoring1 container & PASS \\
+    TC04 & Install Pi-hole using unattended installation & PASS \\
+    TC05 & Start Pi-hole service & PASS \\
+    TC06 & Install Vector & PASS \\
+    TC07 & Configure Vector & PASS \\
+    TC08 & Start Vector service & PASS \\
+    TC09 & Install Loki & PASS \\
+    TC10 & Configure Loki & PASS \\
+    TC11 & Start Loki service & PASS \\
+    TC12 & Install Prometheus & PASS \\
+    TC13 & Configure Prometheus  & PASS\\
+    TC14 & Start Prometheus service & PASS \\
+    TC15 & Install Grafana & PASS \\
+    TC16 & Configure Grafana & PASS \\
+    TC17 & Start Grafana service & PASS \\
+  \end{tblr}
 \end{table}
 
-\begin{figure}[htbp]
-\centerline{\includegraphics{fig1.png}}
-\caption{Example of a figure caption.}
-\label{fig}
-\end{figure}
+\begin{table}[H]
+  \caption{RESULT OF WHITE-BOX TESTING}
+  \label{table:white_box}
+  \begin{tblr}{hlines,colspec={|l|X[l,m]|c|}}
+    \SetCell[c=1]{c} Test Case & \SetCell[c=1]{c} Description & \SetCell[c=1]{c} Result\\
+    TC18 & OPNsense syslog forwarding & PASS \\
+    TC19 & OPNsense metric scraping & PASS \\
+    TC20 & Pi-hole syslog forwarding & PASS \\
+    TC21 & Pi-hole metric scraping & PASS \\
+  \end{tblr}
+\end{table}
 
-Figure Labels: Use 8 point Times New Roman for Figure labels. Use words 
-rather than symbols or abbreviations when writing Figure axis labels to 
-avoid confusing the reader. As an example, write the quantity 
-``Magnetization'', or ``Magnetization, M'', not just ``M''. If including 
-units in the label, present them within parentheses. Do not label axes only 
-with units. In the example, write ``Magnetization (A/m)'' or ``Magnetization 
-\{A[m(1)]\}'', not just ``A/m''. Do not label axes with a ratio of 
-quantities and units. For example, write ``Temperature (K)'', not 
-``Temperature/K''.
+\section{Conclusion}
 
-\section*{Acknowledgment}
+The proposed system is designed to be an improvement to existing systems. One of the advantages of
+this system is the utilization of hypervisor and virtualised environment as the system
+infrastructure model. This approach allows multiple guest virtual machines and containers to be
+deployed in a single hardware, which is a cost-saving measure for home use.
 
-The preferred spelling of the word ``acknowledgment'' in America is without 
-an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B. 
-G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
-acknowledgments in the unnumbered footnote on the first page.
+The only faultless system is a system that is never developed. Based on the outcome of the developed
+system, there are several suggestions and improvements that could be applied to enhance the system
+on fulfilling the requirements further. Since the beginning of 2023, there are several new mini PC
+released that utilise low TDP CPU that could be a good alternative as hardware of this project.
+Furthermore, the small dimension of this mini PC allows for easy management and placement. For the
+network security suite, there are several options that were identified during the development phases
+such as ZenArmor and CrowdSec. These software have its own advantages and disadvantages depending on
+the use case. In future improvement, these software could be examined and compared to be used with
+this system as an alternative to the current implementation.
 
-\section*{References}
+\printbibliography[heading=bibintoc]
 
-Please number citations consecutively within brackets \cite{b1}. The 
-sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
-number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
-the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
-
-Number footnotes separately in superscripts. Place the actual footnote at 
-the bottom of the column in which it was cited. Do not put footnotes in the 
-abstract or reference list. Use letters for table footnotes.
-
-Unless there are six authors or more give all authors' names; do not use 
-``et al.''. Papers that have not been published, even if they have been 
-submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
-that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
-Capitalize only the first word in a paper title, except for proper nouns and 
-element symbols.
-
-For papers published in translation journals, please give the English 
-citation first, followed by the original foreign-language citation \cite{b6}.
-
-\begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-\end{thebibliography}
-\vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
+% \begin{thebibliography}{00}
+% \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
+% \bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
+% \bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
+% \bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
+% \bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
+% \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
+% \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+% \end{thebibliography}
+% \vspace{12pt}
+% \color{red}
+% IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
 
 \end{document}
