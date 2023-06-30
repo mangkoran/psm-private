@@ -28,38 +28,25 @@ email address or ORCID}
 \textit{name of organization (of Aff.)}\\
 City, Country \\
 email address or ORCID}
-\and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
 }
 
 \maketitle
 
 \begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
+
+  As the application of information and communication technology has become exponentially increased
+  over the last few years, smart and intelligent devices started to appear in the home environment.
+  The development of wireless technologies created great freedoms for and more mobility of users
+  with mobile devices. This also increased the use of mobile devices at home, leading to the birth
+  of wireless networks in homes. However, the broad adoption of ICT in households created a new
+  security risks and threats against private assets of users inside the home network. It is becoming
+  more troublesome as most individuals in the home environment are less skilled and capable to
+  respond against intruder and hacker attacks. This project intends to develop a network firewall
+  with unique system infrastructure by utilizing bare-metal hypervisor to host firewall virtual
+  machine and monitoring containers. This approach allows cost reduction because the utilisation of
+  single PC as the host of multiple virtual machines. The system is expected to be able to provide
+  proper network security infrastructure for home network environment
+
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -67,20 +54,93 @@ component, formatting, style, styling, insert
 \end{IEEEkeywords}
 
 \section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
 
-\section{Ease of Use}
+Information and communication technology, in the shape of physical and digital assets, are uniquely
+new kinds of personal property in this digital age. Home networks, every device connected to it,
+including personal computers and smart devices, and even the data stored inside previously mentioned
+devices should be treated carefully and protected under an adequate network security measure.
+Personal data and even devices access control are two of many private assets that individual might
+not want them to be accessed or even tampered by unknown outsiders. Internet Service Provider (ISP)
+on most of the time provide their home internet subscriber a basic router with Wi-Fi capability.
+However, the supplied router often has limited capabilities for securing the home network. Home
+users can always purchase third party router with more features; however, it will still cost them a
+fair amount of money.
 
-\subsection{Maintaining the Integrity of the Specifications}
+\section{Problem Background}
 
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+The widespread usage of information and communication technology in households introduces another
+type of risks and threats towards ICT assets, both physical and digital form. Additionally,
+individuals in the home network environment are far less capable and prepared to address
+cyberattacks and intruders. Because of that, individuals at home are clueless to some extent as they
+may have no idea what is or may happen to their home, home devices, the data stored within the
+devices, and more terrifying, their own personal lives as attackers are now able to do physical harm
+to individuals inside the home. Moreover, as detailed by Zetter, it is possible for hackers to
+perform attack against home or even business automation and security systems through power lines.
+Using this conduit, the hackers can, through remote commands, take control of a multitude of
+devices, such as lights, electronic locks, heating and air conditioning systems, and security alarm
+and cameras. This exploit is possible as the systems operate on Ethernet networks that communicate
+over the existing power lines in the home.
+
+This project is aimed to provide proof-of-concept in developing home network security by utilizing
+enterprise-grade firewall deployed on virtualised environment on a personal computer (PC). The
+firewall is able to be configured according to the use case of the user, with additional advanced
+features and controls which can be found in enterprise firewall appliance. The usage of PC in this
+project is intended to make the firewall deployment flexible; any PC that fulfil the minimum
+requirements should be able to be used as the host of the firewall system.
+
+\section{Literature Review}
+
+\section{System Development Methodology}
+
+Waterfall model is selected as the proposed system will mainly serve its function with minimal
+user-facing interface. This is in accordance with the definition of waterfall model where the
+product definition is required to be stable among the course of the development. Another reason is
+the project involves hardware development or configuration where manufacturing or procurement cost
+are involved. In addition, the developed system appliance could be considered as critical system
+which requires extensive safety and security analysis of the solution specification and design.
+
+\subsection{Phases of Selected Methodology}
+
+The Waterfall model is a linear and sequential software development process consisting of several
+phases. The Waterfall model initiated with Requirement Gathering and Analysis, followed by System
+Design, Implementation, Integration and System Testing, and ended with Deployment and Maintenance.
+
+\begin{enumerate}
+  \item Requirement Gathering and Analysis: The Waterfall project methodology is started by
+    gathering the project requirements and analyse the collected facts. The system services,
+    constraints, and objectives are established with the system users. They are then defined in
+    detail and serve as a system specification.
+
+  \item System Design: Following the Requirements Gathering and Analysis is the System Design phase.
+    This phase defines the required condition to either software or physical hardware systems.  This
+    involves identifying the modules or components of the system, their relationships, and how they
+    will interact with each other. It determines the entire system architecture in general view.
+
+  \item Implementation: The Implementation phase is where the design is finalised as a set of
+    solution or components. This also includes verification that every implemented components
+    fulfill its requirements.
+
+  \item Integration and System Testing: In the Integration and System Testing phase, the particular
+    solution or components are configured and assembled as one entire system. To guarantee that the
+    project requirements have been fulfilled, the project may only proceed to the Deployment and
+    Maintenance phase after the proposed system has been thoroughly tested for its functionality.
+
+  \item Deployment and Maintenance: After the previous phases of system development, design,
+    implementation, and testing have been done and passed, the proposed system will be deployed to
+    be used based on its use cases and requirements. After the proposed system has been successfully
+    deployed, the project will move to the Maintenance phase. This phase will involve addressing
+    user feedback, fixing defects or issues discovered after deployment, and making necessary
+    updates or enhancements.
+
+\end{enumerate}
+
+\subsection{Technology Used}
+
+\section{Requirement Analysis and Design}
+
+\section{Testing}
+
+\section{Conclusion}
 
 \section{Prepare Your Paper Before Styling}
 Before you begin to format your paper, first write and save the content as a 
