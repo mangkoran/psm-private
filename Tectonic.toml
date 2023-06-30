@@ -3,6 +3,7 @@ name = "utmthesis"
 bundle = "https://data1.fullyjustified.net/tlextras-2022.0r0.tar"
 
 [[output]]
+shell_escape_cwd = "."
 name = "default"
 type = "pdf"
 preamble = ""
