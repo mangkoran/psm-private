@@ -47,16 +47,21 @@ provide the overall view of the system at the early stage \cite{Shen2003Formaliz
 \Cref{fig:use_case} shows the use case diagram of the proposed system. The use case diagram is
 designed based on the result of the requirement analysis phase. In the proposed system, there exist
 three actors which are the user, the system, and the administrator. Four use cases were also
-defined, which are accessing local network, accessing wide area network, configuring the firewall,
+defined, which are accessing local area network, accessing wide area network, configuring the firewall,
 and monitoring the system. In addition, it followed by a table which list the brief use case
 description.
 
 \begin{table}[H]
   \begin{tblr}{hlines,width=\textwidth,colspec={|X[l,m]|X[l,m]|}}
     \SetCell[c=1]{c} Use Case & \SetCell[c=1]{c} Description \\
-    UC01: Access local network & User access another device which exists in the local network \\
+    UC01: Access local area network & User access another device which exists in the local area
+    network \\
+
     UC02: Access wide area network / Internet & User access the Internet \\
-    UC03: Configure System & Administrator configure the system using the proposed Ansible code \\
+
+    UC03: Configure System & Administrator configure the system using the proposed Ansible playbook
+    \\
+
     UC04: Monitor system & Administrator monitor the system metrics and logs \\
   \end{tblr}
   \caption{Brief description of use case diagram}
@@ -77,35 +82,36 @@ Appendix A.
     Description & User access another device which exists in the local network \\
     Actor & User, System \\
     Related use case & - \\
-    Precondition & User's device is connected to the local network \\
+    Precondition & User's device is connected to the System \\
     Normal flow &
     \begin{enumerate}
-      \item The use case starts whenever user is trying to communicate or access a device in the
+      \item The use case starts whenever User is trying to communicate or access a device in the
         local network
 
-      \item The system receives the request packet from user's device
+      \item The System receives the request packet from User's device
 
-      \item The system forwards the packet to the appropriate destination, in this case it is the
-        device which the user wants to access
+      \item The System forwards the packet to the appropriate destination, in this case it is the
+        device which the User wants to access
 
-      \item The destination device receives the packet
+      \item The destination address receives the packet
 
-      \item The destination device sends the response packet to the system
+      \item The destination address sends the response packet to the System
 
-      \item The system forwards the packet to appropriate destination, in this case it is the user's
+      \item The system forwards the packet to appropriate destination, in this case it is the User's
+        device
     \end{enumerate} \\
     Alternative flow & - \\
     Post condition &
     \begin{enumerate}
       \item Success condition
         \begin{enumerate}
-          \item The user receives the response from the device
+          \item The User receives the response from the device
         \end{enumerate}
         \item Failure condition
           \begin{enumerate}
-            \item The user fails to receive the response from the device
+            \item The User fails to receive the response from the device
 
-            \item The system drops the packet
+            \item The System drops the packet
           \end{enumerate}
     \end{enumerate} \\
   \end{tblr}

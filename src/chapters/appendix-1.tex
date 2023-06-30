@@ -2,6 +2,164 @@
 
 \begin{document}
 
-\chapter{Instrumen Pengujian}
+\chapter{List of System Use Cases}
+
+\begin{table}[H]
+  \begin{tblr}{hlines,measure=vbox,width=\textwidth,colspec={|l|X[l,m]|}}
+    Use case & Access local area network \\
+    ID & UC01 \\
+    Description & User access another device which exists in the local area network \\
+    Actor & User, System \\
+    Related use case & - \\
+    Precondition & User's device is connected to the System \\
+    Normal flow &
+    \begin{enumerate}
+      \item The use case starts whenever User is trying to communicate or access a device in the
+        local area network
+
+      \item The System receives the request packet from user's device
+
+      \item The System forwards the packet to the appropriate destination, in this case it is the
+        device which the User wants to access
+
+      \item The destination address receives the packet
+
+      \item The destination address sends the response packet to the System
+
+      \item The system forwards the packet to appropriate destination, in this case it is the User's
+        device
+    \end{enumerate} \\
+    Alternative flow & - \\
+    Post condition &
+    \begin{enumerate}
+      \item Success condition
+        \begin{enumerate}
+          \item The User receives the response from the device
+        \end{enumerate}
+        \item Failure condition
+          \begin{enumerate}
+            \item The User fails to receive the response from the device
+
+            \item The System drops the packet
+          \end{enumerate}
+    \end{enumerate} \\
+  \end{tblr}
+  \caption{Use Case Description of Access Local Area Network}
+  \label{table:use_case_1}
+\end{table}
+
+\begin{table}[H]
+  \begin{tblr}{hlines,measure=vbox,width=\textwidth,colspec={|l|X[l,m]|}}
+    Use case & Access wide area network / Internet \\
+    ID & UC02 \\
+    Description & User access the Internet \\
+    Actor & User, System \\
+    Related use case & - \\
+    Precondition & User's device is connected to the System \\
+    Normal flow &
+    \begin{enumerate}
+      \item The use case starts whenever User is trying to communicate or access the Internet
+
+      \item The System receives the request packet from User's device
+
+      \item The System forwards the packet to the appropriate destination, in this case it is the
+        Internet
+
+      \item The destination address receives the packet
+
+      \item The destination address sends the response packet to the System
+
+      \item The system forwards the packet to appropriate destination, in this case it is the User's
+        device
+    \end{enumerate} \\
+    Alternative flow & - \\
+    Post condition &
+    \begin{enumerate}
+      \item Success condition
+        \begin{enumerate}
+          \item The user receives the response from the remote address
+        \end{enumerate}
+        \item Failure condition
+          \begin{enumerate}
+            \item The User fails to receive the response from the remote address
+
+            \item The System drops the packet
+          \end{enumerate}
+    \end{enumerate} \\
+  \end{tblr}
+  \caption{Use Case Description of Access Wide Area Network / Internet}
+  \label{table:use_case_2}
+\end{table}
+
+\begin{table}[H]
+  \begin{tblr}{hlines,measure=vbox,width=\textwidth,colspec={|l|X[l,m]|}}
+    Use case & Configure firewall \\
+    ID & UC03 \\
+    Description & Administrator configure the System using the proposed Ansible playbook \\
+    Actor & User, System \\
+    Related use case & - \\
+    Precondition & Administrator's device is connected to the System \\
+    Normal flow &
+    \begin{enumerate}
+      \item The use case starts whenever Administrator is trying to configure the System
+
+      \item Administrator executes the proposed Ansible playbook
+
+      \item System receives the Ansible configuration script
+
+      \item System executes the Ansible script
+
+      \item System reports the script execution status to Administrator's device
+    \end{enumerate} \\
+    Alternative flow & - \\
+    Post condition &
+    \begin{enumerate}
+      \item Success condition
+        \begin{enumerate}
+          \item The System applies the new configuration made by Ansible
+        \end{enumerate}
+        \item Failure condition
+          \begin{enumerate}
+            \item The Ansible playbook fails to apply the new configuration
+          \end{enumerate}
+    \end{enumerate} \\
+  \end{tblr}
+  \caption{Use Case Description of Configure System}
+  \label{table:use_case_3}
+\end{table}
+
+\begin{table}[H]
+  \begin{tblr}{hlines,measure=vbox,width=\textwidth,colspec={|l|X[l,m]|}}
+    Use case & Monitor system \\
+    ID & UC03 \\
+    Description & Administrator view the metrics and logs visualised in Grafana dashboard \\
+    Actor & User, System \\
+    Related use case & - \\
+    Precondition & Administrator's device is connected to the System \\
+    Normal flow &
+    \begin{enumerate}
+      \item The use case starts whenever Administrator is trying to view the monitoring dashboard in
+        Grafana
+
+      \item Administrator login to the Grafana dashboard
+
+      \item Administrator navigate to the System's Grafana dashboard
+    \end{enumerate} \\
+    Alternative flow & - \\
+    Post condition &
+    \begin{enumerate}
+      \item Success condition
+        \begin{enumerate}
+          \item System metrics and logs are visualised in the Grafana dashboard
+        \end{enumerate}
+        \item Failure condition
+          \begin{enumerate}
+            \item No System metrics and logs are  visualised in the Grafana dashboard
+          \end{enumerate}
+    \end{enumerate} \\
+  \end{tblr}
+  \caption{Use Case Description of Monitor System}
+  \label{table:use_case_4}
+\end{table}
 
 \end{document}
