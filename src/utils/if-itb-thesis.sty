@@ -171,8 +171,9 @@
 % \addtolength{\cftchapnumwidth}{\mylen} % add the extra space
 
 % Hilangkan indentasi di entri LoF dan LoT dan tambahkan ruang antara nomor dengan caption
-\cftsetindents{figure}{0em}{2.75em}
-\cftsetindents{table}{0em}{2.75em}
+% currently bug with tcolorbox blend into=figures
+% \cftsetindents{figure}{0em}{2.75em}
+% \cftsetindents{table}{0em}{2.75em}
 
 % Pisah daftar lampiran dari ToC
 %%%
@@ -300,10 +301,10 @@
     fontsize=\small,
     numbersep=8pt,
     #1},
-  title={Figure \thefigure. #4},
+  title={#4},
   detach title,
   listing above comment,
-  comment=\centering\tcbtitletext\bigskip,
+  comment=\centering Figure \thefigure. #4 \bigskip,
   label={fig:#5},
   boxsep=0pt,
   left skip=0pt,
@@ -337,3 +338,16 @@
 \usepackage{float}
 \usepackage[inkscapeversion=1.2.2]{svg}
 \usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{eso-pic}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+
+
+\fancypagestyle{copyright}{%
+  \fancyhf{}
+  \fancyhead[R]{ PSZ 19:16 (Pind. 1/13) }
+  \renewcommand{\headrulewidth}{0pt}
+}%
+
