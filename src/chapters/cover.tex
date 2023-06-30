@@ -6,48 +6,31 @@
 \pagestyle{empty}
 
 % Setting margin for cover page
-\newgeometry{top=3cm,bottom=3cm,left=3cm,right=3cm}
+% \newgeometry{top=3cm,bottom=3cm,left=3cm,right=3cm}
 
-% Use Times font for cover page as per the thesis document guidelines
-{\fontfamily{ptm}\selectfont%
-	\begin{center}
+\begin{center}
 
-		\smallskip
+  \smallskip
 
-		\large{\bfseries \MakeUppercase{\thetitle}}
-		\\[2\baselineskip]
+  \large{ \MakeUppercase{\thetitle}}
+  \\[2\baselineskip]
 
-		\large{\bfseries Laporan Tugas Akhir}
-		\\[\baselineskip]
 
-		\normalsize{ \bfseries
-			Disusun sebagai syarat kelulusan tingkat sarjana
-		}
-		\\[3\baselineskip]
+  \vfill
 
-		\normalsize{ \bfseries Oleh\\}
-		\large{ \bfseries \MakeUppercase{\theauthor}}
+  \large{  \MakeUppercase{\theauthor}}
 
-		\vfill
-		\begin{figure}[h]
-			\centering
-			\includegraphics[height=3.5cm,keepaspectratio]{../assets/cover-ganesha.jpg}
-		\end{figure}
-		\vfill
+  \vfill
 
-		\large{ \bfseries
-			\uppercase{
-				Program Studi Teknik Informatika \\
-				Sekolah Teknik Elektro dan Informatika \\
-				Institut Teknologi Bandung\\
-			}
-			Juni 2020
-		}
+  \large{ 
+    \uppercase{
+      Universiti Teknologi Malaysia\\
+    }
+  }
 
-	\end{center}
-}%
+\end{center}
 
-\restoregeometry
+% \restoregeometry
 \clearpage
 
 \end{document}
